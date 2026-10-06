@@ -2,13 +2,14 @@ import './style.css';
 import './theme.css';
 import './pages.css';
 import './typography.css';
+import './editorial.css';
 import logo from '../logo.png';
-import labArtwork from '../dmkd_logo.png';
 import githubIcon from '../free-icon-github-logo-25231.png';
 import linkedinIcon from '../free-icon-linkedin-3991775.png';
 import scholarIcon from '../icons8-google-학술-검색-50.png';
 import { lab, programs, studentPrograms, publications, news, faculty } from './content.js';
-import { icon, networkArt } from './icons.js';
+import { icon } from './icons.js';
+import { initializeHero } from './hero.js';
 import { escapeHtml as e, safeUrl } from './validation.js';
 import { assetUrl, loadPublicData } from './api.js';
 import { initializeMembers, openMemberArea } from './members.js';
@@ -35,6 +36,11 @@ document.querySelector('#app').innerHTML = `
   </header>
   <main id="main">
     <section id="home" class="hero">
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide active" data-caption="A world of possibility" style="--position:center 57%;--mobile-position:62% center"><img src="/images/hero/background_1.webp" alt="" width="1920" height="1278" fetchpriority="high"/></div>
+        <div class="hero-slide" data-caption="Patterns into perspective" style="--position:center 49%"><img src="/images/hero/background_2.webp" alt="" width="1440" height="1920" decoding="async"/></div>
+        <div class="hero-slide" data-caption="Rooted in curiosity" style="--position:center 57%;--mobile-position:62% center"><img src="/images/hero/background3.webp" alt="" width="1736" height="1142" decoding="async"/></div>
+      </div>
       <div class="hero-grid container">
         <div class="hero-copy">
           <p class="eyebrow light"><span class="status-dot"></span> DATA MINING & KNOWLEDGE DISCOVERY</p>
@@ -42,9 +48,8 @@ document.querySelector('#app').innerHTML = `
           <p class="hero-description">Finding meaningful connections.<br>Opening new possibilities through data.</p>
           <div class="hero-actions"><a class="button primary" href="#research">Explore our research ${icon('arrow')}</a><a class="text-link light" href="#members">Meet the people ${icon('northeast')}</a></div>
         </div>
-        <div class="hero-visual">${networkArt()}<div class="graph-label label-one"><span></span> CONNECT THE DOTS</div><div class="graph-label label-two">DATA → KNOWLEDGE</div><p class="visual-caption">Complex data. Meaningful connections.</p></div>
       </div>
-      <div class="hero-bottom container"><span>DMKD LAB <span class="divider">/</span> SEOUL, SOUTH KOREA</span><a href="#research">Discover what’s next ${icon('down')}</a></div>
+      <div class="hero-bottom container"><div><span class="hero-location">DMKD LAB <span class="divider">/</span> SEOUL, SOUTH KOREA</span><span class="hero-slide-caption">01 / 03 · A world of possibility</span></div><div class="hero-controls" role="group" aria-label="Home background images"><button data-slide="0" aria-label="Show Earth at night background" aria-pressed="true"></button><button data-slide="1" aria-label="Show blue waves background" aria-pressed="false"></button><button data-slide="2" aria-label="Show campus background" aria-pressed="false"></button><button data-slideshow-toggle aria-label="Pause background slideshow">${icon('pause')}</button></div></div>
     </section>
     <div class="intro-strip"><div class="container"><span>Curiosity, connected.</span><p>A research community at <strong>Duksung Women’s University</strong>.</p><a href="#apply" aria-label="Find DMKD Lab">${icon('northeast')}</a></div></div>
 
@@ -66,7 +71,9 @@ document.querySelector('#app').innerHTML = `
 
     <section id="news" class="section container">
       <div class="section-heading"><div><p class="eyebrow">03 / NEWS & LAB LIFE</p><h2>A closer look at the lab.</h2></div><span class="section-description">Ideas, moments, and milestones along the way.</span></div>
-      <div class="news-layout"><div><div class="subsection-heading"><h3>Latest updates</h3><span class="small-label">LAB NOTES</span></div><div id="news-list"></div></div><aside class="brand-story"><img src="${labArtwork}" alt="DMKD Lab identity in blue and purple" loading="lazy"/><div><p class="eyebrow light">BUILT ON CURIOSITY</p><h3>Better questions.<br>New connections.</h3><a href="#apply" class="text-link light">Discover the lab ${icon('northeast')}</a></div></aside></div>
+      <div class="news-toolbar"><nav class="news-year-links" aria-label="News by year">${[...new Set(news.map(n=>n.date.slice(0,4)))].sort().map(year=>`<a href="#news-year-${year}">${year}</a>`).join('')}</nav><label class="news-sort">Reading order <select id="news-order" aria-label="News reading order"><option value="oldest">Oldest first</option><option value="newest">Newest first</option></select></label></div>
+      <div id="news-list"></div>
+      <p class="news-source-note">Explore the full announcements in our <a href="https://lab.researchwho.com/DSWU-DMKD/news/" ${external}>original news archive ${icon('northeast')}</a>.</p>
       <div class="subsection-heading gallery-heading"><div><p class="eyebrow">BEHIND THE RESEARCH</p><h3>Life at DMKD</h3></div><button class="text-link" data-member-open>Share a lab moment ${icon('upload')}</button></div>
       <div id="gallery-list" class="gallery-grid"></div>
     </section>
@@ -106,7 +113,13 @@ function renderPublications() {
 
 function renderNews() {
   if(!document.querySelector('#news-list'))return;
-  document.querySelector('#news-list').innerHTML = news.length ? [...news].sort((a,b)=>b.date.localeCompare(a.date)).map(n=>`<article class="news-row"><time datetime="${e(n.date)}">${e(new Date(`${n.date}T12:00:00`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}))}</time><span class="small-label">${e(n.category)}</span><h3>${safeUrl(n.url)?`<a href="${e(safeUrl(n.url))}" ${external}>${e(n.title)} ${icon('northeast')}</a>`:e(n.title)}</h3><p>${e(n.summary)}</p></article>`).join('') : emptyState('Good things are taking shape.','Check back for research updates, lab news, and shared milestones.','spark');
+  const direction = document.querySelector('#news-order')?.value === 'newest' ? -1 : 1;
+  const ordered = [...news].sort((a,b)=>direction*a.date.localeCompare(b.date));
+  const years = [...new Set(ordered.map(n=>n.date.slice(0,4)))];
+  document.querySelector('#news-list').innerHTML = news.length ? years.map(year=>{
+    const entries=ordered.filter(n=>n.date.startsWith(year));
+    return `<section class="news-year-group" id="news-year-${year}" aria-labelledby="news-heading-${year}"><div class="news-year-heading"><h3 id="news-heading-${year}">${year}</h3><p>${entries.length} ${entries.length===1?'story':'stories'}</p></div><div class="news-cards">${entries.map(n=>`<article class="news-card" id="${e(n.id)}"><button class="news-image-button" data-news-photo="${e(n.id)}" aria-label="View photo: ${e(n.title)}"><img src="${e(n.image)}" alt="${e(n.title)}" loading="lazy" decoding="async" width="800" height="540"/></button><div class="news-card-body"><div class="news-card-meta"><time datetime="${e(n.date)}">${e(new Date(`${n.date}T12:00:00`).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}))}</time><span class="small-label">${e(n.category)}</span></div><h4>${e(n.title)}</h4><p>${e(n.summary)}</p></div></article>`).join('')}</div></section>`;
+  }).join('') : emptyState('Good things are taking shape.','Check back for research updates, lab news, and shared milestones.','spark');
 }
 
 export function memberCard(profile) {
@@ -163,12 +176,20 @@ document.addEventListener('click', (event)=>{
     const photo = publicData.photos.find(p=>p.id===photoButton.dataset.photo);
     const modal = document.createElement('dialog');modal.className='photo-modal';modal.setAttribute('aria-label','Lab photo');modal.innerHTML=`<button class="icon-button close-dialog" aria-label="Close photo">${icon('close')}</button><img src="${e(assetUrl(photo.image_path))}" alt="${e(photo.caption)}"/><p>${e(photo.caption)}</p>`;document.body.append(modal);modal.showModal();modal.querySelector('button').onclick=()=>modal.close();modal.addEventListener('close',()=>modal.remove());
   }
+  const newsPhotoButton = event.target.closest('[data-news-photo]');
+  if(newsPhotoButton){
+    const item=news.find(n=>n.id===newsPhotoButton.dataset.newsPhoto);
+    if(!item)return;
+    const modal=document.createElement('dialog');modal.className='photo-modal news-photo-modal';modal.setAttribute('aria-label',item.title);modal.innerHTML=`<button class="icon-button close-dialog" aria-label="Close photo">${icon('close')}</button><img src="${e(item.image)}" alt="${e(item.title)}"/><p>${e(item.title)}</p>`;document.body.append(modal);modal.showModal();modal.querySelector('button').onclick=()=>modal.close();modal.addEventListener('close',()=>{modal.remove();newsPhotoButton.focus();});
+  }
 });
 initializeRouter({
   afterRender(){
     activeProgram='all';renderPublications();renderNews();renderPeople();renderGallery();
+    initializeHero();
     document.querySelector('#publication-search')?.addEventListener('input',renderPublications);
     document.querySelector('#publication-year')?.addEventListener('change',renderPublications);
+    document.querySelector('#news-order')?.addEventListener('change',renderNews);
   },
   renderAdmin:()=>renderAdminPage({toast,refreshPublicData}),
 });

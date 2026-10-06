@@ -1,0 +1,122 @@
+[
+  {
+    "id": "news-54",
+    "date": "2024-07-22",
+    "category": "People",
+    "title": "Welcoming a new M.S. student",
+    "summary": "이고은 joins the master’s program.",
+    "image": "/images/news/news-54.webp",
+    "sourceId": "object-54",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2024/07/22/Aqpcy9ON2WvOJlPyPQy2DAWvuq5evOcFMqiUuHvZN7VMTIYwkTkYij4-GNF.webp"
+  },
+  {
+    "id": "news-79",
+    "date": "2025-05-15",
+    "category": "Lab life",
+    "title": "Teachers’ Day",
+    "summary": "The lab thanks Professor 유제혁 for his guidance.",
+    "image": "/images/news/news-79.webp",
+    "sourceId": "object-79",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2025/09/16/KakaoTalk_20250916_034111025.jpg"
+  },
+  {
+    "id": "news-80",
+    "date": "2025-07-03",
+    "category": "Conference",
+    "title": "KCC 2025",
+    "summary": "Graduate and undergraduate researchers present in Jeju.",
+    "image": "/images/news/news-80.webp",
+    "sourceId": "object-80",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2025/09/16/KakaoTalk_20250916_013523661.jpg"
+  },
+  {
+    "id": "news-81",
+    "date": "2025-09-25",
+    "category": "Award",
+    "title": "Samsung AI Challenge recognition",
+    "summary": "김가빈, 이민혜 and 서해인 receive recognition for document-understanding research.",
+    "image": "/images/news/news-81.webp",
+    "sourceId": "object-81",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2025/11/17/AI_Challenge.jpg"
+  },
+  {
+    "id": "news-82",
+    "date": "2025-10-18",
+    "category": "Award",
+    "title": "ACK 2025 paper award",
+    "summary": "서해인 receives an award for her poster presentation.",
+    "image": "/images/news/news-82.webp",
+    "sourceId": "object-82",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2025/11/17/ACK_2025.jpg"
+  },
+  {
+    "id": "news-84",
+    "date": "2025-11-07",
+    "category": "Conference",
+    "title": "KDBC 2025",
+    "summary": "박지예 and 김가빈 present handwriting-generation and document-understanding research in Gyeongju.",
+    "image": "/images/news/news-84.webp",
+    "sourceId": "object-84",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2025/11/17/KDBC_2025.jpg"
+  },
+  {
+    "id": "news-89",
+    "date": "2025-11-21",
+    "category": "Award",
+    "title": "Industrial information systems paper award",
+    "summary": "Professor 유제혁’s LLM-based electricity-demand forecasting research receives recognition.",
+    "image": "/images/news/news-89.webp",
+    "sourceId": "object-89",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2026/01/16/%EC%9A%B0%EC%88%98%EB%85%BC%EB%AC%B8%EC%83%81.jpg"
+  },
+  {
+    "id": "news-85",
+    "date": "2025-11-29",
+    "category": "Conference",
+    "title": "2025 Fall e-Commerce Conference",
+    "summary": "The lab presents credit-risk, anomaly-detection and financial-news sentiment research.",
+    "image": "/images/news/news-85.webp",
+    "sourceId": "object-85",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2025/12/01/KakaoTalk_20251129_110034910_06.jpg"
+  },
+  {
+    "id": "news-86",
+    "date": "2025-11-29",
+    "category": "Award",
+    "title": "e-Commerce best paper award",
+    "summary": "강예은, 이승주, 안혜림 and 김나연 win for card-transaction anomaly detection.",
+    "image": "/images/news/news-86.webp",
+    "sourceId": "object-86",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2025/12/03/%EC%9A%B0%EC%88%98%EB%85%BC%EB%AC%B8%EC%83%81.png"
+  },
+  {
+    "id": "news-90",
+    "date": "2025-12-31",
+    "category": "Award",
+    "title": "Science Ministry award",
+    "summary": "서해인 receives recognition for Code Club software-education volunteering.",
+    "image": "/images/news/news-90.webp",
+    "sourceId": "object-90",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2026/01/16/%EA%B3%BC%EA%B8%B0%EB%B6%80.png"
+  },
+  {
+    "id": "news-102",
+    "date": "2026-03-20",
+    "category": "Scholarship",
+    "title": "KT scholarship",
+    "summary": "서해인 is selected as a KT Digital Talent Scholar.",
+    "image": "/images/news/news-102.webp",
+    "sourceId": "object-102",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2026/04/13/%ED%95%B4%EC%9D%B8.jpg"
+  },
+  {
+    "id": "news-108",
+    "date": "2026-08-14",
+    "category": "Award",
+    "title": "SNU FoodTech gold award",
+    "summary": "이고은 and 서해인 win under Professor 유제혁’s supervision.",
+    "image": "/images/news/news-108.webp",
+    "sourceId": "object-108",
+    "sourceImage": "https://storage.googleapis.com/ovation-product-media/lab/news/thumbnail_image/2026/08/26/KakaoTalk_20260818_103002411_09.jpg"
+  }
+]

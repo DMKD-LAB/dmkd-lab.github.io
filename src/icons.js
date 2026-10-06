@@ -15,6 +15,8 @@ const paths = {
   spark: '<path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z"/>',
   layers: '<path d="m12 3 10 5-10 5L2 8Zm-10 9 10 5 10-5M2 16l10 5 10-5"/>',
   check: '<path d="m5 12 4 4L19 6"/>',
+  pause: '<path d="M8 5v14M16 5v14"/>',
+  play: '<path d="m8 4 12 8-12 8Z"/>',
 };
 export const icon = (name, cls = '') => `<svg class="icon ${cls}" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.arrow}</svg>`;
 

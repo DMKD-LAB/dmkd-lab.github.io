@@ -64,7 +64,7 @@ async function login(page){
   await page.getByRole('button',{name:'Sign in',exact:true}).click();
 }
 
-test('public desktop page has six destinations, no invented records, and an honest unconfigured login',async({page})=>{
+test('public desktop page has six destinations and an honest unconfigured login',async({page})=>{
   const errors=[];page.on('pageerror',err=>errors.push(err.message));
   await page.setViewportSize({width:1440,height:1000});
   await page.goto(base);
@@ -77,6 +77,55 @@ test('public desktop page has six destinations, no invented records, and an hone
   await expect(page.getByRole('button',{name:'Member access coming soon'})).toBeDisabled();
   await page.keyboard.press('Escape');await expect(page.locator('#member-dialog')).not.toBeVisible();
   expect(errors).toEqual([]);
+});
+
+test('home photos can be selected and paused, including reduced-motion navigation',async({page})=>{
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.goto(base);
+  await expect(page.getByRole('button',{name:'Play background slideshow'})).toBeVisible();
+  await expect(page.locator('.hero-slide.active img')).toHaveAttribute('src','/images/hero/background_1.webp');
+  for(const [name,asset] of [['blue waves','background_2'],['campus','background3'],['Earth at night','background_1']]){
+    await page.getByRole('button',{name:`Show ${name} background`,exact:true}).click();
+    await expect(page.locator('.hero-slide.active img')).toHaveAttribute('src',`/images/hero/${asset}.webp`);
+    await expect.poll(()=>page.locator('.hero-slide.active img').evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
+  }
+  await page.getByRole('button',{name:'Play background slideshow'}).click();
+  await expect(page.getByRole('button',{name:'Pause background slideshow'})).toBeVisible();
+  await page.getByRole('button',{name:'Pause background slideshow'}).click();
+  await page.locator('#main-nav a[href="/news/"]').click();
+  await page.locator('#main-nav a[href="/"]').click();
+  await page.getByRole('button',{name:'Show campus background'}).click();
+  await expect(page.locator('.hero-slide-caption')).toContainText('03 / 03');
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  await page.screenshot({path:'test-results/home-banner-mobile.png',fullPage:true});
+});
+
+test('news imports all dated stories and photos, with sorting and accessible enlargement',async({page})=>{
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(base+'/news/');
+  await expect(page.locator('.news-card')).toHaveCount(12);
+  const dates=await page.locator('.news-card time').evaluateAll(nodes=>nodes.map(n=>n.dateTime));
+  expect(dates).toEqual([...dates].sort());
+  expect(dates[0]).toBe('2024-07-22');expect(dates.at(-1)).toBe('2026-08-14');
+  expect(dates.filter(date=>date==='2025-11-29')).toHaveLength(2);
+  for(const photo of await page.locator('.news-image-button img').all()){
+    await photo.scrollIntoViewIfNeeded();
+    await expect.poll(()=>photo.evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
+  }
+  await page.getByRole('combobox',{name:'News reading order'}).selectOption('newest');
+  await expect(page.locator('.news-card time').first()).toHaveAttribute('datetime','2026-08-14');
+  await page.getByRole('combobox',{name:'News reading order'}).selectOption('oldest');
+  await page.locator('.news-image-button').first().click();
+  await expect(page.getByRole('dialog',{name:'Welcoming a new M.S. student'})).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.news-photo-modal')).toHaveCount(0);
+  await expect(page.locator('.news-image-button').first()).toBeFocused();
+  await page.evaluate(()=>scrollTo(0,0));
+  await page.screenshot({path:'test-results/news-desktop.png'});
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  await page.screenshot({path:'test-results/news-mobile.png',fullPage:true});
 });
 
 test('each destination has its own page with direct links, reload, and browser history',async({page})=>{

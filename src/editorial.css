@@ -1,0 +1,87 @@
+/* Full-bleed photography, with a quiet violet-to-mint light over the images. */
+.hero { background: #101827; }
+.hero::before {
+  z-index: -1;
+  background: linear-gradient(90deg, #131328ed 0%, #192039bd 40%, #142c4140 100%),
+    linear-gradient(0deg, #091c2dcc, transparent 40%);
+}
+.hero::after { display: none; }
+.hero-slides { position: absolute; inset: 0; z-index: -2; }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
+.hero-slide.active { opacity: 1; }
+.hero-slide img { width: 100%; height: 100%; object-fit: cover; object-position: var(--position, center); }
+.hero-grid { grid-template-columns: 1fr; min-height: 580px; padding-block: 70px; }
+.hero-copy { max-width: 760px; padding: 0; }
+.hero .eyebrow { font-size: 10px; letter-spacing: .18em; }
+.hero h1 { font-size: clamp(60px, 6.4vw, 92px); line-height: 1.12; }
+.hero-description { color: #e0e5ee; }
+.hero-actions { margin-top: 35px; }
+.hero-bottom { min-height: 90px; gap: 24px; border-color: #ffffff2b; }
+.hero-location { color: #dae4eb; font-size: 10px; letter-spacing: .14em; }
+.hero-slide-caption { display: block; margin-top: 6px; color: #becbdc; font-size: 10px; letter-spacing: .035em; }
+.hero-controls { display: flex; align-items: center; gap: 5px; padding: 3px 8px; border: 1px solid #ffffff38; border-radius: 30px; background: #10203259; backdrop-filter: blur(15px); }
+.hero-controls button { width: 44px; height: 44px; padding: 0; border: 0; background: none; display: grid; place-items: center; color: white; border-radius: 50%; cursor: pointer; }
+.hero-controls button:hover { background: #ffffff14; }
+.hero-controls [data-slide]::before { content: ''; width: 6px; height: 6px; background: #ffffff77; border-radius: 5px; transition: width .25s, background .25s; }
+.hero-controls [aria-pressed="true"]::before { width: 24px; background: var(--mint); }
+.hero-controls [data-slideshow-toggle] { margin-left: 2px; border-left: 1px solid #ffffff26; border-radius: 0; }
+.hero-controls .icon { width: 15px; height: 15px; }
+
+/* The journal follows the lab's history, from its first entry onward. */
+.news-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 20px; margin-bottom: 42px; border-block: 1px solid var(--line); }
+.news-year-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.news-year-links a { padding: 8px 19px; border: 1px solid #e3dcef; border-radius: 30px; font-size: 13px; background: #faf8fe; color: #675188; }
+.news-year-links a:hover { background: #ece5f8; }
+.news-sort { display: flex; gap: 13px; align-items: center; font-size: 12px; color: var(--muted); }
+.news-sort select { min-height: 44px; border: 1px solid #e0d9ec; border-radius: 7px; padding: 10px 13px; font: inherit; color: var(--ink); background: white; }
+.news-year-group { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 32px; scroll-margin-top: 120px; }
+.news-year-group + .news-year-group { margin-top: 60px; padding-top: 42px; border-top: 1px solid var(--line); }
+.news-year-heading h3 { font-size: 34px; font-weight: 400; color: #796396; line-height: 1.2; }
+.news-year-heading p { font-size: 11px; margin-top: 12px; color: var(--muted); }
+.news-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.news-card { overflow: hidden; border: 1px solid #e6e1ec; border-radius: 13px; background: white; box-shadow: 0 6px 24px #42335b05; }
+.news-image-button { display: block; width: 100%; padding: 0; border: 0; border-bottom: 1px solid #e6e1ec; background: linear-gradient(125deg, #f1edf7, #edf3f8); cursor: zoom-in; overflow: hidden; }
+.news-image-button img { display: block; width: 100%; height: 270px; object-fit: contain; transition: transform .3s; }
+.news-image-button:hover img { transform: scale(1.025); }
+.news-card-body { padding: 25px 27px 28px; }
+.news-card-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.news-card time { font-size: 11px; color: #7b7287; }
+.news-card .small-label { font-size: 9px; color: #80649e; }
+.news-card h4 { font-size: 22px; line-height: 1.4; letter-spacing: -.02em; margin-top: 17px; }
+.news-card-body > p { font-size: 13px; color: var(--muted); margin-top: 12px; word-break: keep-all; }
+.news-source-note { margin-top: 38px; font-size: 12px; color: var(--muted); }
+.news-source-note a { color: #6d5793; text-decoration: underline; text-underline-offset: 3px; }
+.news-photo-modal { max-width: min(1000px, calc(100vw - 32px)); }
+.news-photo-modal > img { max-height: 75dvh; object-fit: contain; }
+
+@media (max-width: 900px) {
+  .hero-grid { min-height: 540px; padding-block: 65px; }
+  .hero-copy { max-width: 630px; }
+  .news-year-group { grid-template-columns: 1fr; gap: 24px; }
+  .news-year-heading { display: flex; align-items: baseline; gap: 16px; }
+  .news-year-heading p { margin: 0; }
+  .news-image-button img { height: 235px; }
+}
+@media (max-width: 650px) {
+  .hero-grid { min-height: 485px; padding-block: 62px 48px; }
+  .hero-copy { padding: 0; }
+  .hero h1 { font-size: clamp(45px, 12.7vw, 68px); }
+  .hero .eyebrow { font-size: 8px; letter-spacing: .11em; }
+  .hero::before { background: linear-gradient(90deg, #15142bd6, #1b244573), linear-gradient(0deg, #101c30de, transparent 70%); }
+  .hero-slide img { object-position: var(--mobile-position, center); }
+  .hero-description { font-size: 14px; }
+  .hero-actions { flex-wrap: wrap; gap: 20px; }
+  .hero-bottom { align-items: flex-start; flex-direction: column; gap: 18px; padding-block: 22px; }
+  .hero-location { font-size: 8px; }
+  .hero-slide-caption { font-size: 9px; margin-top: 6px; }
+  .hero-controls { align-self: flex-end; }
+  .news-toolbar { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 30px; }
+  .news-sort { width: 100%; justify-content: space-between; }
+  .news-year-links a { font-size: 12px; padding-inline: 17px; }
+  .news-cards { grid-template-columns: 1fr; gap: 24px; }
+  .news-image-button img { height: 255px; }
+  .news-card-body { padding: 22px; }
+  .news-card h4 { font-size: 21px; }
+  .news-year-group + .news-year-group { margin-top: 38px; padding-top: 30px; }
+  .news-year-heading h3 { font-size: 30px; }
+}

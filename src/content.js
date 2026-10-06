@@ -1,3 +1,5 @@
+import newsArchive from './data/news.json' with { type: 'json' };
+
 // Add verified lab content here. Empty collections intentionally publish no examples.
 export const lab = {
   name: 'DMKD Lab',
@@ -10,8 +12,8 @@ export const lab = {
 
 // { id, title, authors, venue, year, type: 'Conference' | 'Journal', url, codeUrl? }
 export const publications = [];
-// { id, title, date: 'YYYY-MM-DD', category, summary, url? }
-export const news = [];
+// { id, title, date: 'YYYY-MM-DD', category, summary, image, sourceId, sourceImage }
+export const news = newsArchive;
 // Optional faculty: { name, title, interests: [], photoUrl, email, scholarUrl, linkedinUrl, githubUrl }
 export const faculty = [];
 
