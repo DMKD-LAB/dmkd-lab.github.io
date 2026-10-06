@@ -44,8 +44,14 @@ http://127.0.0.1:5173/
 http://127.0.0.1:5173/?account=recovery
 ```
 
-6. Email provider 및 **이메일 확인(Confirm email)을 켭니다.** 최초 운영자 권한은 확인된 이메일에 의존하므로 이메일 확인을 끄지 마세요. 공개 운영에는 Custom SMTP를 설정하고 발신자 주소/도메인을 인증하세요. [기본 메일 서비스](https://supabase.com/docs/guides/auth/auth-smtp)는 프로젝트 조직에 허용된 주소로 발송이 제한되어 일반 회원에게 확인·복구 메일을 보내지 못할 수 있습니다. Auth의 이메일 요청 rate limit도 운영 상황에 맞춰 설정하세요.
+6. Email provider 및 **이메일 확인(Confirm email)을 켭니다.** 최초 운영자 권한은 확인된 이메일에 의존하므로 이메일 확인을 끄지 마세요. Email provider의 **Minimum password length는 12**로 설정합니다. 현재 프로젝트에는 서버와 입력 폼 모두 최소 12자를 적용했습니다. 공개 운영에는 Custom SMTP를 설정하고 발신자 주소/도메인을 인증하세요. [기본 메일 서비스](https://supabase.com/docs/guides/auth/auth-smtp)는 프로젝트 조직에 허용된 주소로 발송이 제한되어 일반 회원에게 확인·복구 메일을 보내지 못할 수 있습니다. Auth의 이메일 요청 rate limit도 운영 상황에 맞춰 설정하세요.
 7. 개발 서버를 재시작합니다. GitHub Pages 운영 시에는 아래 저장소 변수도 설정하고 다시 배포해야 합니다.
+
+### 연구실 Gmail SMTP 연결
+
+Auth → Emails → SMTP Settings에서 Custom SMTP를 사용합니다. 발신자명은 `DMKD Lab`, Host는 `smtp.gmail.com`, Port는 `465`(SSL)입니다. Sender email address와 Username에는 같은 연구실 Gmail 주소를 입력합니다. Google 2단계 인증 후 [앱 비밀번호](https://support.google.com/accounts/answer/185833?hl=ko)를 발급하여 SMTP Password에 직접 입력하고 저장합니다. 일반 Gmail 비밀번호를 사용하거나 앱 비밀번호를 소스·환경변수·GitHub에 저장하지 않습니다. 최소 재발송 간격은 60초를 유지합니다. 최초 연결 후에는 실제 인증/복구 메일 수신을 확인해야 합니다.
+
+현재는 무료 Supabase 플랜을 유지하기로 했습니다. [유출 비밀번호 차단](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection)은 Pro 이상 전용이므로 보류합니다. 최소 길이 설정은 유출 여부 검사와는 별개이며, 해당 보안 검사 경고는 무료 플랜을 사용하는 동안 남습니다.
 
 ## 첫 번째 계정으로 테스트
 
