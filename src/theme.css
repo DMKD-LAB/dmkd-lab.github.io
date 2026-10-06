@@ -1,0 +1,250 @@
+/* Lab identity: violet, blue, and mint light over deep indigo. */
+:root {
+  --ink: #22233f;
+  --muted: #71738a;
+  --line: #e5e5ef;
+  --teal: #6553b1;
+  --mint: #a6f0dd;
+  --paper: #f7f7fc;
+  --spectrum: linear-gradient(110deg, #c5adfa 0%, #acd5ff 49%, #a6f0dd 100%);
+  --deep-spectrum: linear-gradient(115deg, #6550aa 0%, #416ca7 56%, #327c83 100%);
+  --soft-spectrum: linear-gradient(115deg, #f4effd 0%, #edf4fd 52%, #ecf9f4 100%);
+}
+
+body { color: var(--ink); }
+::selection { background: #d8ccf8; color: #242139; }
+input:focus, select:focus { outline-color: #8072c9; }
+a:focus-visible, button:focus-visible { outline-color: #9484dc; }
+.button, .icon-button, .member-access { border-radius: 7px; }
+.button { transition: transform .25s, box-shadow .25s, filter .25s; }
+.button.primary {
+  background: var(--spectrum);
+  color: #252749;
+  border-color: #ffffff59;
+  box-shadow: 0 3px 0 #ffffff20 inset, 0 6px 28px #9188f527;
+}
+.button.primary:hover {
+  background: var(--spectrum);
+  filter: brightness(1.08);
+  box-shadow: 0 3px 0 #ffffff30 inset, 0 8px 34px #8fbaf84a;
+}
+.button.dark {
+  background: var(--deep-spectrum);
+  box-shadow: 0 5px 18px #6651ad1a;
+}
+.button.dark:hover { background: var(--deep-spectrum); filter: brightness(1.09); }
+.button.outline { border-color: #d8d5e8; }
+.button.outline:hover { background: #f7f5fc; box-shadow: 0 4px 18px #62569012; }
+.eyebrow { color: #7160aa; }
+.eyebrow.light { color: #d0c8eb; }
+
+/* A quiet glass header lets the logo's original colors lead. */
+.site-header {
+  background: #ffffffed;
+  border-bottom: 0;
+  box-shadow: 0 3px 25px #382e6008;
+  backdrop-filter: blur(22px);
+}
+.site-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #c7ace370, #9abfe573, #9ddeca70);
+}
+#main-nav > a { color: #656479; }
+#main-nav > a.active { color: #6953ac; }
+#main-nav > a.active::after { background: var(--deep-spectrum); height: 2px; }
+.member-access {
+  border-color: #ddd5ef;
+  color: #5c4b85;
+  background: linear-gradient(120deg, #f4effc, #eff8fa);
+}
+.member-access:hover { border-color: #b4a3d9; box-shadow: 0 4px 15px #66529e12; }
+
+/* Layered pools of light, with a fine grid visible through the atmosphere. */
+.hero { background: #11132b; }
+.hero::before {
+  background:
+    radial-gradient(ellipse at 4% 5%, #7848ae75 0%, transparent 53%),
+    radial-gradient(ellipse at 57% 35%, #3c60c164 0%, transparent 58%),
+    radial-gradient(ellipse at 98% 76%, #46cdb777 0%, transparent 49%),
+    linear-gradient(116deg, #251837 0%, #18244c 54%, #153c48 100%);
+  z-index: -2;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(#d6cefa05 1px, transparent 1px), linear-gradient(90deg, #d6cefa05 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(90deg, transparent 30%, #000 78%);
+}
+.hero h1 { font-weight: 600; text-shadow: 0 8px 45px #16132e26; }
+.hero h1 span {
+  color: #b4ddf6;
+  background: linear-gradient(100deg, #d4b6ff 2%, #acd2ff 45%, #99efd7 96%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+.hero .eyebrow { color: #d1c9ec; }
+.status-dot { background: #c1a3f5; box-shadow: 0 0 0 4px #c4a2f014, 0 0 16px #c4a2f099; }
+.hero-description { color: #c0c3de; }
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 13% 8% 13%;
+  border-radius: 50%;
+  background: conic-gradient(from 215deg, #a087ee3d, #84b5f53b, #8af1d833, #a087ee3d);
+  filter: blur(36px);
+  pointer-events: none;
+}
+.network-art { position: relative; filter: drop-shadow(0 0 16px #a1c7ff13); }
+.graph-label {
+  border-color: #d4d5ff38;
+  background: linear-gradient(110deg, #35305b9c, #29546b96);
+  color: #d5dfef;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px #10122c24, 0 1px 0 #ffffff0d inset;
+  border-radius: 5px;
+}
+.label-one span { background: #a6f0dd; box-shadow: 0 0 10px #a6f0dd66; }
+.visual-caption { color: #b3c7dd; }
+.hero-bottom { color: #b9bed9; border-color: #d2d4ff26; }
+.hero-bottom .divider { color: #939ac0; }
+.hero-bottom > a { color: #d1d6eb; }
+.intro-strip {
+  background: linear-gradient(110deg, #f4effa, #eff4fc 52%, #eefaf5);
+  border-bottom-color: #ebe8f3;
+}
+.intro-strip span { color: #5e4b86; }
+.intro-strip .icon { color: #7874ab; }
+
+/* White editorial surfaces, lifted by soft color and thin luminous edges. */
+.section-tint {
+  background: radial-gradient(ellipse at 0 0, #eee8fb6b, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, #dff5ee50, transparent 55%), #f8f9fd;
+  border-color: #eeedf6;
+}
+.section-heading h2 { color: #29263f; }
+.research-card {
+  border-color: #e7e4f0;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px #39336307, 0 1px 3px #39336303;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.research-card:hover {
+  border-color: #c3b4e4;
+  box-shadow: 0 16px 38px #7762ba17;
+}
+.research-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, #ffffff25, transparent 45%, #ffffff38);
+  pointer-events: none;
+}
+.art-data { background: linear-gradient(125deg, #efe4fa, #e3eafd 55%, #d4f0ea); }
+.art-learning { background: radial-gradient(ellipse at 65% 60%, #c6bbeb7a, transparent 60%), linear-gradient(130deg, #eee1fa, #e0e8ff 65%, #dceef6); }
+.art-knowledge { background: linear-gradient(125deg, #e4e5fd, #d9ecf9 48%, #ccefe3); }
+.art-index { color: #7d6c9f; }
+.data-bars i { background: linear-gradient(0deg, #baaae2, #6b8cc6 56%, #85d0bd); border-radius: 3px 3px 0 0; }
+.data-bars i:nth-child(3n+1) { background: linear-gradient(0deg, #c6b5ee, #8b72ba); }
+.learning-orbits i { border-color: #9280c9; box-shadow: 0 0 18px #9280c911; }
+.learning-orbits b { background: var(--spectrum); box-shadow: 0 0 26px #9279d455; }
+.knowledge-nodes .icon { color: #698fb1; filter: drop-shadow(0 3px 7px #56a6b333); }
+.research-body .eyebrow { color: #817099; }
+.topic-tags span { background: #faf8fd; border-color: #e8e0f2; color: #7a698c; border-radius: 4px; }
+.empty-icon { background: var(--soft-spectrum); color: #8b79ad; box-shadow: 0 0 0 1px #ded5ef70; }
+.empty-state h3 { color: #514966; }
+.publication-toolbar select { border-color: #e0ddec; border-radius: 6px; }
+.search-field .icon { color: #9a8aac; }
+.publication-year { color: #7960ae; }
+.brand-story {
+  border: 1px solid #b3a1ef50;
+  border-radius: 15px;
+  background: #262052;
+  box-shadow: 0 12px 32px #61558d14;
+}
+.brand-story > img { opacity: .66; }
+.brand-story::after {
+  background: linear-gradient(100deg, #2c205ae8, #29377072 62%, #54bfa726);
+}
+.brand-story h3 { color: #f2ecff; }
+.gallery-empty {
+  background: linear-gradient(110deg, #faf7ff, #f5f9ff 60%, #f3fbf8);
+  border-color: #d8cdea;
+  border-radius: 11px;
+}
+.gallery-empty > .icon { color: #9b87b8; }
+.gallery-photo { border-color: #e4dff0; border-radius: 12px; box-shadow: 0 5px 20px #4c3b7309; }
+.filter-tab { border-radius: 6px; border-color: #ddd7ec; color: #78708b; }
+.filter-tab.active { background: var(--deep-spectrum); border-color: transparent; box-shadow: 0 4px 12px #7060a41f; }
+.group-heading h3 span { background: #ebe5f6; color: #83709f; }
+.member-empty { background: #ffffffb3; border-color: #e7e2f0; border-radius: 9px; }
+.member-empty > .icon { color: #a998bc; }
+.member-card { border-color: #e7e1ef; border-radius: 13px; box-shadow: 0 8px 26px #53407609; }
+.member-photo { background: var(--soft-spectrum); }
+.avatar-initials { color: #9c8fbb; }
+.interest-tags span { background: linear-gradient(115deg, #f1ecfa, #edf4fa); color: #75628e; border-radius: 5px; }
+.social-links a { border-color: #e6e0f0; border-radius: 6px; }
+.social-links a:hover { background: #f2edf9; }
+
+.apply-banner {
+  border-radius: 17px;
+  background: radial-gradient(ellipse at 3% 0, #9163b84d, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, #62d9ba4a, transparent 60%),
+    linear-gradient(115deg, #30234e, #273c67 60%, #275c67);
+  border: 1px solid #bbade02b;
+  box-shadow: 0 18px 46px #38346817, 0 1px 0 #ffffff17 inset;
+}
+.apply-banner::after {
+  border-color: #c6c7fa1c;
+  box-shadow: 0 0 0 35px #b4adf608, 0 0 0 70px #b4adf606;
+}
+.apply-banner > div > p:not(.eyebrow) { color: #c7c9e2; }
+.apply-programs > div { border-color: #d3cbf42b; }
+.apply-programs > div > span { color: #c0afe3; }
+.apply-programs .icon { color: #b1ded8; }
+.apply-programs > p { color: #b4c6da !important; }
+.address-block > .icon { color: #8d75ac; }
+.map-panel { border-color: #dfdaeb; border-radius: 13px; box-shadow: 0 7px 26px #5e478309; }
+.map-caption { background: var(--soft-spectrum); color: #7d6c90; }
+footer { background: linear-gradient(115deg, #faf7fd, #f7f9fe 55%, #f4fbf8); border-top-color: #e7dff2; }
+.footer-bottom { border-color: #dedbec; }
+
+/* Carry the same palette into the member tools. */
+.member-dialog { background: linear-gradient(150deg, #faf7ff, #fff 33%, #f7fcfc); border-color: #d4c8e7; box-shadow: 0 28px 100px #20163c4d; }
+.member-dialog::backdrop, .photo-modal::backdrop { background: linear-gradient(110deg, #251736d9, #1b3452d9, #21453ed9); }
+.setup-message { background: var(--soft-spectrum); color: #736583; }
+.setup-message > .icon { color: #8e75b2; }
+.form-section-title > span { background: #f0eafa; color: #8c71ad; }
+.upload-label { background: var(--soft-spectrum); border-color: #c0afd8; color: #7a6791; }
+.keyword { border-color: #e2daed; color: #7c6f8c; border-radius: 6px; }
+.keyword.selected { background: linear-gradient(120deg, #e9def8, #e0ecfa 65%, #def3ed); border-color: #b9abd2; color: #604d80; }
+.publish-check { background: var(--soft-spectrum); border-radius: 8px; }
+.toast { background: var(--deep-spectrum); box-shadow: 0 8px 30px #59478433; }
+
+@media (max-width: 900px) {
+  #main-nav { background: linear-gradient(120deg, #fff, #f7f5fc); }
+}
+@media (max-width: 650px) {
+  .hero::before {
+    background: radial-gradient(ellipse at 0 0, #8553b264, transparent 52%),
+      radial-gradient(ellipse at 100% 86%, #49bfa955, transparent 56%),
+      linear-gradient(145deg, #2b1c46, #1d3057 57%, #1d4c54);
+  }
+  .hero::after { background-size: 46px 46px; mask-image: linear-gradient(180deg, transparent 25%, #000); }
+  .hero-visual::before { filter: blur(25px); }
+  .research-card { border-radius: 12px; }
+  .apply-banner { border-radius: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button, .research-card { transition: none; }
+}

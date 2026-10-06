@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'GounBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GounBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* The serif letterforms need softer tracking and more breathing room. */
+body { line-height: 1.7; }
+h1, h2 { font-weight: 400; letter-spacing: -.035em; }
+h3, h4 { font-weight: 700; }
+p { line-height: 1.85; }
+.hero h1 {
+  font-size: clamp(58px, 6.1vw, 84px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.045em;
+}
+.hero-description { font-size: 16px; line-height: 1.9; }
+.page-masthead h1 { font-weight: 400; letter-spacing: -.035em; line-height: 1.15; }
+.page-masthead h1 + p { font-size: 15px; line-height: 1.9; }
+.section-heading h2, .admin-heading h2 { line-height: 1.3; }
+.section-description { font-size: 14px; line-height: 1.9; }
+.eyebrow { font-size: 11px; letter-spacing: .16em; }
+.small-label { letter-spacing: .1em; }
+#main-nav { gap: 22px; }
+#main-nav > a { font-size: 13px; }
+.member-access { font-size: 12px; }
+.button, .text-link, .filter-tab { font-weight: 700; letter-spacing: .015em; }
+.button { line-height: 1.5; }
+.directory-card h3 { font-size: 23px; line-height: 1.35; letter-spacing: -.025em; }
+.directory-card p { font-size: 13px; }
+.directory-card .text-link { font-size: 12px; }
+.research-body h3, .member-details h3 { letter-spacing: -.025em; }
+.research-body > p:not(.eyebrow) { font-size: 13px; }
+.group-heading h3 { letter-spacing: -.02em; }
+.group-heading p, .member-empty { font-size: 12px; }
+.empty-state p { font-size: 13px; }
+.member-dialog h2 { font-weight: 400; letter-spacing: -.03em; line-height: 1.35; }
+.dialog-subtitle, .setup-message, .form-feedback { font-size: 13px; line-height: 1.85; }
+.stack-form label:not(.upload-label), .keyword, .account-toolbar { font-size: 12px; }
+.account-identity h3 { font-size: 16px; }
+.account-identity p { font-size: 13px; }
+.account-verification { font-size: 11px; }
+.account-controls label { font-size: 12px; }
+.account-controls select, .account-controls .button { font-size: 12px; }
+.account-feedback { font-size: 12px; }
+
+@media (min-width: 901px) and (max-width: 1150px) {
+  .header-inner { gap: 22px; }
+  #main-nav { gap: 15px; }
+  #main-nav > a { font-size: 12px; }
+}
+
+@media (max-width: 900px) {
+  #main-nav { gap: 3px; }
+  #main-nav > a { font-size: 15px; }
+  .hero h1 { font-size: 57px; }
+}
+
+@media (max-width: 650px) {
+  .hero h1 { font-size: clamp(45px, 12vw, 62px); line-height: 1.17; letter-spacing: -.04em; }
+  .hero-description { font-size: 14px; }
+  .hero .eyebrow { font-size: 8px; letter-spacing: .12em; }
+  .page-masthead h1 { font-size: clamp(35px, 10.2vw, 43px); }
+  .page-masthead h1 + p { font-size: 13px; }
+  .section-description { font-size: 13px; }
+  .directory-card h3 { font-size: 23px; }
+  .research-body > p:not(.eyebrow) { font-size: 12px; }
+  .group-heading p, .member-empty { font-size: 11px; }
+  .filter-tab { font-size: 11px; }
+  .member-dialog h2 { font-size: 27px; }
+  .stack-form input:not([type=checkbox]), .stack-form select { font-size: 16px; }
+}
