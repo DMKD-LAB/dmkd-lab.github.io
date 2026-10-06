@@ -2,6 +2,10 @@
 
 영어 기반의 반응형 연구실 홈페이지입니다. GitHub Pages는 화면을 제공하고, Supabase는 이메일/비밀번호 로그인, 회원 정보, 사진을 저장합니다. 별도의 상시 실행 서버는 필요하지 않습니다.
 
+공개 사이트: **https://dmkd-lab.github.io/** · [Members](https://dmkd-lab.github.io/members/) · [Administration](https://dmkd-lab.github.io/admin/)
+
+2026-10-06: GitHub Pages 배포와 모든 페이지 직접 접속(HTTP 200)을 확인했습니다. Supabase Site URL 및 공개/로컬 가입·비밀번호 복구 리디렉션도 저장했습니다. **일반 회원에게 인증·복구 메일을 발송하려면 Custom SMTP 설정이 남아 있습니다.** 현재 기본 메일 서비스는 프로젝트 팀에 허용된 주소에만 발송합니다. 최초 운영자 계정과 등록된 공개 프로필은 연결되어 있습니다.
+
 공개 회원·교수·논문·뉴스 데이터는 빈 상태로 시작합니다. **Supabase에 연결되어 로그인/회원가입 화면이 활성화되어 있습니다.** 연결 대상은 `dmkd20242026's Project` (`geqkimegnprqipooaqvr`)입니다. 공개 API에서 이메일 가입 활성화, 이메일 인증 필수 설정, 비로그인 사용자의 회원 관리 RPC 차단을 확인했습니다. 최초 운영자 계정의 이메일 인증 및 승인된 운영자 권한도 확인했습니다.
 
 로컬 연결값은 Git에서 제외되는 `.env.local`에 저장되어 있습니다. GitHub Pages 배포에는 별도로 아래 저장소 변수를 설정해야 합니다. `pnpm check:connection`으로 읽기 전용 연결 검사를 다시 실행할 수 있습니다.
@@ -97,6 +101,8 @@ pnpm build
 단위 테스트는 URL/입력 검증을 확인합니다. 권한 테스트는 로컬 PGlite PostgreSQL에 두 SQL 파일을 적용해 이메일 인증 전 운영자 지정, 무단 승격, 승인 전 쓰기, 타인 프로필 수정/파일 삭제를 차단하는지 확인합니다. 운영자 승인·승격·중지, 마지막 운영자 보호, 최초 지정 1회 제한도 실행합니다. 실제 Supabase Auth/메일/Storage HTTP 서비스까지 연결하는 테스트는 프로젝트 설정 후 첫 계정으로 수행해야 합니다.
 
 브라우저 테스트는 `pnpm test:e2e`로 실행합니다. 최초에는 `pnpm exec playwright install chromium`이 필요합니다. Windows에서 설치된 Edge를 사용하려면 `PLAYWRIGHT_CHANNEL=msedge` 환경변수를 설정하세요. 브라우저 테스트의 회원 API는 로컬 테스트 응답으로 격리되며 외부 계정을 만들거나 실제 사진을 공개하지 않습니다.
+
+배포 전 단위/DB 권한 테스트 6개와 브라우저 테스트 14개가 통과했습니다. 공개 배포 후 실제 프로필·사진·관심분야·소셜 링크 로딩 및 로그인 화면도 확인했습니다. Supabase 보안 검사에서 유출 비밀번호 차단 기능은 비활성 상태로 확인되었으며, 별도 요금제/설정에 따라 [추가 활성화](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection)할 수 있습니다.
 
 ```powershell
 $env:PLAYWRIGHT_CHANNEL = 'msedge'
