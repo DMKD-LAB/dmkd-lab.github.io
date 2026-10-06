@@ -17,7 +17,7 @@ export const faculty = [];
 
 export const studentPrograms = [
   { value: 'ms', label: 'M.S. Students', short: 'M.S.', description: 'Graduate research, deeper questions.' },
-  { value: 'bsms', label: 'Combined B.S.–M.S.', short: 'B.S.–M.S.', description: 'Connecting undergraduate and graduate research.' },
+  { value: 'bsms', label: 'Integrated B.S.–M.S.', short: 'B.S.–M.S.', description: 'Connecting undergraduate and graduate research.' },
   { value: 'undergraduate', label: 'Undergraduate Researchers', short: 'Undergraduate', description: 'A first step into discovery.' },
 ];
 export const programs = [

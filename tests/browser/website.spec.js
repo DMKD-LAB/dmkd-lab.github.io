@@ -114,7 +114,7 @@ test('phone, tablet, and desktop layouts fit with working program filters and na
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
     await page.getByRole('button',{name:'B.S.–M.S.',exact:true}).click();
     await expect(page.locator('#member-list .member-group')).toHaveCount(1);
-    await expect(page.locator('#member-list')).toContainText('Combined B.S.–M.S.');
+    await expect(page.locator('#member-list')).toContainText('Integrated B.S.–M.S.');
     await page.getByRole('button',{name:'All members',exact:true}).click();
     await expect(page.locator('#member-list .member-group')).toHaveCount(4);
   }
