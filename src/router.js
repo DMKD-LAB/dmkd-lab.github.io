@@ -17,7 +17,7 @@ export function initializeRouter({ afterRender, renderAdmin }) {
     ['research','network','Explore our research','From data mining to knowledge discovery.'],
     ['members','user','Meet our people','Different paths. A shared curiosity.'],
     ['publications','book','Read our publications','Our contributions to a growing field.'],
-  ].map(([key,symbol,title,description],i)=>`<a class="directory-card" href="${routes[key].path}" data-route><span class="directory-icon">${icon(symbol)}</span><span class="small-label">0${i+1} / ${routes[key].label.toUpperCase()}</span><h3>${title}</h3><p>${description}</p><span class="text-link">Discover more ${icon('northeast')}</span></a>`).join('')}</div><div class="home-news-link"><div><p class="eyebrow">BEYOND THE RESEARCH</p><h3>Stay connected with the lab.</h3></div><a class="text-link" href="/news/" data-route>News & lab life ${icon('arrow')}</a><a class="text-link" href="/apply/" data-route>Apply / Contact ${icon('arrow')}</a></div></section>`;
+  ].map(([key,symbol,title,description],i)=>`<a class="directory-card" href="${routes[key].path}" data-route><span class="directory-icon">${icon(symbol)}</span><span class="small-label">0${i+1} / ${routes[key].label.toUpperCase()}</span><h3>${title}</h3><p>${description}</p><span class="text-link">Discover more ${icon('northeast')}</span></a>`).join('')}</div><div class="home-news-link"><div><p class="eyebrow">BEYOND THE RESEARCH</p><h3>Stay connected with the lab.</h3></div><a class="text-link" href="/news/" data-route>News ${icon('arrow')}</a><a class="text-link" href="/apply/" data-route>Apply / Contact ${icon('arrow')}</a></div></section>`;
 
   function normalizeLinks(root) {
     root.querySelectorAll('a[href^="#"]').forEach(link => {

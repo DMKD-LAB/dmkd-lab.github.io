@@ -13,7 +13,6 @@ export function publicationRow(p) {
     ['DOI', safeUrl(p.doiUrl)],
     ...notes.filter(note => safeUrl(note)).map(note => [note.toLowerCase().endsWith('.pdf') ? 'PDF' : 'Paper', safeUrl(note)]),
     ['Code', safeUrl(p.codeUrl)],
-    ['Source', safeUrl(p.sourceUrl)],
   ].filter(([,url], index, all) => url && all.findIndex(([,other]) => other === url) === index);
   return `<article class="publication-row" id="${e(p.id)}">
     <div class="publication-date"><span class="publication-year">${e(p.year)}</span><span>${e(p.date)}</span></div>

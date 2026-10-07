@@ -69,14 +69,12 @@ document.querySelector('#app').innerHTML = `
       <div class="publication-toolbar"><label class="search-field">${icon('search')}<input id="publication-search" type="search" placeholder="Search title, author, or venue" aria-label="Search publications"/></label><select id="publication-year" aria-label="Filter publications by year"><option value="all">All years</option>${[...new Set(publications.map(p=>p.year))].sort((a,b)=>b-a).map(y=>`<option value="${e(y)}">${e(y)}</option>`).join('')}</select></div>
       <p class="publication-results" id="publication-count" role="status"></p>
       <div id="publication-list"></div>
-      <p class="archive-source-note">Titles, author names, and publication status follow the <a href="https://lab.researchwho.com/DSWU-DMKD/paper/" ${external}>original lab bibliography ${icon('northeast')}</a>. Separate source entries are retained.</p>
     </div></section>
 
     <section id="news" class="section container">
-      <div class="section-heading"><div><p class="eyebrow">03 / NEWS & LAB LIFE</p><h2>A closer look at the lab.</h2></div><span class="section-description">Ideas, moments, and milestones along the way.</span></div>
+      <div class="section-heading"><div><p class="eyebrow">03 / NEWS</p><h2>A closer look at the lab.</h2></div><span class="section-description">Ideas, moments, and milestones along the way.</span></div>
       <div class="news-toolbar"><nav class="news-year-links" aria-label="News by year">${[...new Set(news.map(n=>n.date.slice(0,4)))].sort().map(year=>`<a href="#news-year-${year}">${year}</a>`).join('')}</nav><label class="news-sort">Reading order <select id="news-order" aria-label="News reading order"><option value="oldest">Oldest first</option><option value="newest">Newest first</option></select></label></div>
       <div id="news-list"></div>
-      <p class="news-source-note">Explore the full announcements in our <a href="https://lab.researchwho.com/DSWU-DMKD/news/" ${external}>original news archive ${icon('northeast')}</a>.</p>
       <div class="subsection-heading gallery-heading"><div><p class="eyebrow">BEHIND THE RESEARCH</p><h3>Life at DMKD</h3></div><button class="text-link" data-member-open>Share a lab moment ${icon('upload')}</button></div>
       <div id="gallery-list" class="gallery-grid"></div>
     </section>
@@ -85,7 +83,6 @@ document.querySelector('#app').innerHTML = `
       <div class="section-heading"><div><p class="eyebrow">04 / OUR PEOPLE</p><h2>Different minds.<br>Shared curiosity.</h2></div><div><p class="section-description">Meet the people behind the questions.</p><button class="text-link" data-member-open>Already a member? Edit your profile ${icon('arrow')}</button></div></div>
       <div class="filter-tabs" role="group" aria-label="Filter members by program"><button class="filter-tab active" data-program="all" aria-pressed="true">All members</button>${programs.map(p=>`<button class="filter-tab" data-program="${p.value}" aria-pressed="false">${p.short}</button>`).join('')}</div>
       <div id="member-list" aria-live="polite"></div>
-      <p class="archive-source-note">Faculty and alumni profiles from our <a href="https://lab.researchwho.com/DSWU-DMKD/member/" ${external}>original member directory ${icon('northeast')}</a>.</p>
     </div></section>
 
     <section id="apply" class="section container">

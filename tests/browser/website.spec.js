@@ -104,6 +104,8 @@ test('home photos can be selected and paused, including reduced-motion navigatio
 test('news imports all dated stories and photos, with sorting and accessible enlargement',async({page})=>{
   await page.setViewportSize({width:1440,height:1000});
   await page.goto(base+'/news/');
+  await expect(page.getByRole('heading',{name:'News',exact:true})).toBeVisible();
+  await expect(page.locator('a[href*="researchwho.com"]')).toHaveCount(0);
   await expect(page.locator('.news-card')).toHaveCount(12);
   const dates=await page.locator('.news-card time').evaluateAll(nodes=>nodes.map(n=>n.dateTime));
   expect(dates).toEqual([...dates].sort());
@@ -252,6 +254,7 @@ for(const category of [
 test('imported bibliography preserves 85 entries, statuses and links with combined filters',async({page})=>{
   await page.setViewportSize({width:1440,height:1000});
   await page.goto(base+'/publications/');
+  await expect(page.locator('a[href*="researchwho.com"]')).toHaveCount(0);
   await expect(page.locator('.publication-row')).toHaveCount(85);
   await expect(page.locator('#paper-object-748')).toContainText('Accepted, Production');
   await expect(page.locator('#paper-object-721')).toContainText('Submitted');
@@ -276,14 +279,15 @@ test('imported bibliography preserves 85 entries, statuses and links with combin
   await page.screenshot({path:'test-results/publications-import-mobile.png'});
 });
 
-test('imported professor and four alumni retain their portraits and profile links',async({page})=>{
+test('imported professor and four alumni retain their portraits without retired service links',async({page})=>{
   await page.setViewportSize({width:1440,height:1000});
   await page.goto(base+'/members/');
   await expect(page.locator('#member-list .member-card')).toHaveCount(5);
   const professor=page.locator('[data-member-group="faculty"] .member-card');
   await expect(professor).toContainText('Jehyeok Rew');
   await expect(professor).toContainText('Machine Learning');
-  await expect(professor.getByRole('link',{name:'Research profile of Jehyeok Rew'})).toHaveAttribute('href','https://researchwho.com/332/');
+  await expect(page.locator('a[href*="researchwho.com"]')).toHaveCount(0);
+  await expect(page.locator('#member-list .member-profile-link')).toHaveCount(0);
   for(const photo of await page.locator('#member-list .member-photo img').all()){
     await photo.scrollIntoViewIfNeeded();
     await expect(photo).toHaveAttribute('src',/^\/images\/members\//);

@@ -3,7 +3,7 @@
 Source: [DMKD Lab on ResearchWho](https://lab.researchwho.com/DSWU-DMKD/news/).
 Imported on 2026-10-07 after expanding both “더보기” controls and checking all 12 visible records.
 
-`src/data/news.json` stores the source record IDs, displayed dates, photo URLs, and concise English summaries. Names retain their original Korean spelling where an official English spelling was not supplied. The source page remains linked for the full Korean announcements and presentation details.
+`src/data/news.json` stores the source record IDs, displayed dates, photo URLs, and concise English summaries. Names retain their original Korean spelling where an official English spelling was not supplied. Public links to the old service were removed at the lab's request on 2026-10-07; this document retains the source for archival reference.
 
 The archive defaults to oldest first. Records dated 2025-11-21 and 2025-11-29 are sorted by date rather than their source display position. Image upload dates are not used as announcement dates. Two separate entries on 2025-11-29 are preserved.
 

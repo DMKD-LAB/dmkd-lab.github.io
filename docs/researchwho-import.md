@@ -9,6 +9,8 @@ Imported on 2026-10-07 at the lab's request, after inspecting the public pages' 
 
 ## Bibliography
 
+Public ResearchWho links and source notices were removed at the lab's request on 2026-10-07. Publisher, DOI, PDF, and code links remain available. Source URLs are retained as archival metadata, including `sourceProfileUrl` for imported people, and are not rendered as website links. Photos are served from this repository.
+
 `src/data/publications.json` retains each source ID, number, category, title, author string, displayed date, venue, notes, indexing tags, and links. Records sort by year descending and retain source order within a year. The source's Journal category includes some conference proceedings; its classification is intentionally preserved. Counts describe source entries, not deduplicated publications.
 
 Near-duplicate records and different publication stages remain separate, including Journal #56/#54, #52/#45, #51/#46, and #42/#41. Accepted and Submitted labels remain visible; they do not become claims that a paper was published. The source misspelling “Accpeted” is displayed as “Accepted,” while the raw data is retained. HTML entities and extra whitespace are decoded for readability. Original Korean and English titles and author names are not translated or reconstructed.

@@ -9,7 +9,7 @@
     "interests": ["Machine Learning", "Big Data", "Data Mining"],
     "photoUrl": "/images/members/jehyeok-rew.webp",
     "sourceImage": "https://storage.googleapis.com/ovation-product-media/accounts/general/2024/01/31/1on1.jpg",
-    "profileUrl": "https://researchwho.com/332/"
+    "sourceProfileUrl": "https://researchwho.com/332/"
   },
   {
     "id": "researchwho-703",
@@ -19,7 +19,7 @@
     "interests": [],
     "photoUrl": "/images/members/kabeen-kim.webp",
     "sourceImage": "https://storage.googleapis.com/ovation-product-media/accounts/general/2025/09/16/KakaoTalk_20250916_035611804.jpg",
-    "profileUrl": "https://researchwho.com/703/"
+    "sourceProfileUrl": "https://researchwho.com/703/"
   },
   {
     "id": "researchwho-609",
@@ -29,7 +29,7 @@
     "interests": [],
     "photoUrl": "/images/members/minhye-lee.webp",
     "sourceImage": "https://storage.googleapis.com/ovation-product-media/accounts/general/2024/10/16/609-profile.jpg",
-    "profileUrl": "https://researchwho.com/609/"
+    "sourceProfileUrl": "https://researchwho.com/609/"
   },
   {
     "id": "researchwho-543",
@@ -41,7 +41,7 @@
     "interests": [],
     "photoUrl": "/images/members/goeun-lee.webp",
     "sourceImage": "https://storage.googleapis.com/ovation-product-media/accounts/general/2026/02/02/임시.png",
-    "profileUrl": "https://researchwho.com/543/"
+    "sourceProfileUrl": "https://researchwho.com/543/"
   },
   {
     "id": "researchwho-334",
@@ -52,6 +52,6 @@
     "photoUrl": "/images/members/serim-park.webp",
     "sourceImage": "https://storage.googleapis.com/ovation-product-static/img/profile.jpg",
     "isPlaceholder": true,
-    "profileUrl": "https://researchwho.com/334/"
+    "sourceProfileUrl": "https://researchwho.com/334/"
   }
 ]
