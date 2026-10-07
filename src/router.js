@@ -35,7 +35,7 @@ export function initializeRouter({ afterRender, renderAdmin }) {
     if (!page) main.innerHTML='<section class="section container not-found"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>This page is still undiscovered.</h1><p>Choose a destination from the navigation or return to the lab home.</p><a href="/" class="button dark" data-route>Back to home</a></section>';
     else if (key === 'home') main.innerHTML=home;
     else {
-      main.innerHTML=`<section class="page-masthead"><div class="container"><div class="breadcrumbs"><a href="/" data-route>Home</a><span>/</span><span>${page.label}</span></div><p class="eyebrow light">DMKD LAB / ${page.label.toUpperCase()}</p><h1>${page.title}</h1><p>${page.description}</p><span class="masthead-orbit" aria-hidden="true"></span></div></section>${key==='admin'?'<section class="section container" id="admin-content" aria-live="polite"></section>':sections[key]}`;
+      main.innerHTML=`<section class="page-masthead${page.image?' has-photo':''}${key==='apply'?' campus-masthead':''}">${page.image?`<img class="masthead-photo" src="${page.image}" alt="" fetchpriority="high"/>`:''}<div class="container"><div class="breadcrumbs"><a href="/" data-route>Home</a><span>/</span><span>${page.label}</span></div><p class="eyebrow light">DMKD LAB / ${page.label.toUpperCase()}</p><h1>${page.title}</h1><p>${page.description}</p><span class="masthead-orbit" aria-hidden="true"></span></div></section>${key==='admin'?'<section class="section container" id="admin-content" aria-live="polite"></section>':sections[key]}`;
     }
     normalizeLinks(document);
     document.title=`${page?.label || 'Page not found'} · DMKD Lab · Duksung Women’s University`;

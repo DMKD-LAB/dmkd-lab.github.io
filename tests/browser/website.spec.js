@@ -84,7 +84,7 @@ test('home photos can be selected and paused, including reduced-motion navigatio
   await page.goto(base);
   await expect(page.getByRole('button',{name:'Play background slideshow'})).toBeVisible();
   await expect(page.locator('.hero-slide.active img')).toHaveAttribute('src','/images/hero/background_1.webp');
-  for(const [name,asset] of [['blue waves','background_2'],['campus','background3'],['Earth at night','background_1']]){
+  for(const [name,asset] of [['blue waves','background_2'],['Earth at night','background_1']]){
     await page.getByRole('button',{name:`Show ${name} background`,exact:true}).click();
     await expect(page.locator('.hero-slide.active img')).toHaveAttribute('src',`/images/hero/${asset}.webp`);
     await expect.poll(()=>page.locator('.hero-slide.active img').evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
@@ -94,8 +94,8 @@ test('home photos can be selected and paused, including reduced-motion navigatio
   await page.getByRole('button',{name:'Pause background slideshow'}).click();
   await page.locator('#main-nav a[href="/news/"]').click();
   await page.locator('#main-nav a[href="/"]').click();
-  await page.getByRole('button',{name:'Show campus background'}).click();
-  await expect(page.locator('.hero-slide-caption')).toContainText('03 / 03');
+  await page.getByRole('button',{name:'Show blue waves background'}).click();
+  await expect(page.locator('.hero-slide-caption')).toContainText('02 / 02');
   await page.setViewportSize({width:390,height:844});
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
   await page.screenshot({path:'test-results/home-banner-mobile.png',fullPage:true});
@@ -133,10 +133,10 @@ test('each destination has its own page with direct links, reload, and browser h
   await page.locator('#main-nav a[href="/members/"]').click();
   await expect(page).toHaveURL(base+'/members/');
   await expect(page.locator('main')).toHaveAttribute('data-page','members');
-  await expect(page.locator('#member-list .member-group')).toHaveCount(4);
+  await expect(page.locator('#member-list .member-group')).toHaveCount(5);
   await expect(page.locator('#research')).toHaveCount(0);
   await expect(page.locator('#main-nav a[aria-current="page"]')).toHaveText('Members');
-  await page.reload();await expect(page.locator('#member-list .member-group')).toHaveCount(4);
+  await page.reload();await expect(page.locator('#member-list .member-group')).toHaveCount(5);
   await page.locator('#main-nav a[href="/research/"]').click();
   await expect(page.locator('#research')).toBeVisible();await expect(page.locator('#member-list')).toHaveCount(0);
   await page.goBack();await expect(page.locator('main')).toHaveAttribute('data-page','members');
@@ -153,6 +153,21 @@ test('each destination has its own page with direct links, reload, and browser h
   await page.goto(base+'/unknown/');await expect(page.getByRole('heading',{name:'This page is still undiscovered.'})).toBeVisible();
 });
 
+test('Research and Contact load their own banners on desktop and mobile',async({page})=>{
+  for(const width of [1440,390]){
+    await page.setViewportSize({width,height:900});
+    for(const [route,image] of [['research','background_2'],['apply','background3']]){
+      await page.goto(`${base}/${route}/`);
+      const banner=page.locator('.masthead-photo');
+      await expect(banner).toHaveAttribute('src',`/images/hero/${image}.webp`);
+      await expect.poll(()=>banner.evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
+      await expect(page.locator('h1')).toBeVisible();
+      expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+      await page.screenshot({path:`test-results/${route}-banner-${width}.png`});
+    }
+  }
+});
+
 test('phone, tablet, and desktop layouts fit with working program filters and navigation',async({page})=>{
   for(const width of [360,390,768,1024,1920]){
     await page.setViewportSize({width,height:900});await page.goto(base);
@@ -165,7 +180,7 @@ test('phone, tablet, and desktop layouts fit with working program filters and na
     await expect(page.locator('#member-list .member-group')).toHaveCount(1);
     await expect(page.locator('#member-list')).toContainText('Integrated B.S.–M.S.');
     await page.getByRole('button',{name:'All members',exact:true}).click();
-    await expect(page.locator('#member-list .member-group')).toHaveCount(4);
+    await expect(page.locator('#member-list .member-group')).toHaveCount(5);
   }
   await page.setViewportSize({width:390,height:844});await page.goto(base);
   await page.screenshot({path:'test-results/home-mobile.png',fullPage:true});
@@ -195,6 +210,7 @@ test('approved member publishes a photo, program, keywords, social icons and pub
   await expect(card.locator('.social-links a')).toHaveCount(3);
   await expect(card.getByRole('link',{name:'public@example.com'})).toHaveAttribute('href','mailto:public@example.com');
   await expect(card).not.toContainText('tester@example.com');
+  await card.screenshot({path:'test-results/member-icons.png'});
   await page.locator('.member-access').click();await page.getByLabel('Publish my profile on the lab website').uncheck();
   await page.getByRole('button',{name:'Save profile',exact:true}).click();
   await expect(page.locator('#toast')).toContainText('saved as a draft');
@@ -202,29 +218,33 @@ test('approved member publishes a photo, program, keywords, social icons and pub
   expect(errors).toEqual([]);
 });
 
-test('faculty profiles publish under Professors and filter separately from student programs',async({page})=>{
+for(const category of [
+  {value:'faculty', name:'Test Professor', filter:'Faculty', label:'Professor'},
+  {value:'alumni', name:'Test Alumnus', filter:'Alumni', label:'Alumni'},
+]) test(`${category.filter} profiles publish, persist and filter separately from student programs`,async({page})=>{
   const state=await mockBackend(page);
   await login(page);
   const position=page.getByRole('combobox',{name:'Position / program',exact:true});
   await expect(position).toHaveValue('ms');
-  await page.getByLabel('Full name').fill('Test Professor');
-  await position.selectOption('faculty');
+  await page.getByLabel('Full name').fill(category.name);
+  await position.selectOption(category.value);
   await page.getByLabel('Publish my profile on the lab website').check();
   await page.getByRole('button',{name:'Save profile',exact:true}).click();
   await expect(page.locator('#toast')).toContainText('Your profile is now published.');
-  expect(state.profile.program).toBe('faculty');
+  expect(state.profile.program).toBe(category.value);
   await page.getByRole('button',{name:'Close member area'}).click();
   await page.locator('#main-nav').getByRole('link',{name:'Members',exact:true}).click();
-  const faculty=page.locator('[data-member-group="faculty"]');
-  await expect(faculty.locator('.member-card')).toContainText('Test Professor');
-  await expect(faculty.locator('.member-details .small-label')).toHaveText('Professor');
-  await page.getByRole('button',{name:'Faculty',exact:true}).click();
+  await page.reload();
+  const group=page.locator(`[data-member-group="${category.value}"]`);
+  await expect(group.locator('.member-card')).toContainText(category.name);
+  await expect(group.locator('.member-details .small-label')).toHaveText(category.label);
+  await page.getByRole('button',{name:category.filter,exact:true}).click();
   await expect(page.locator('.member-group')).toHaveCount(1);
   await page.getByRole('button',{name:'M.S.',exact:true}).click();
   await expect(page.locator('#member-list .member-card')).toHaveCount(0);
   await page.goto(connected+'/apply/');
   await expect(page.locator('.apply-programs h3')).toHaveCount(3);
-  await expect(page.locator('.apply-programs')).not.toContainText('Faculty');
+  await expect(page.locator('.apply-programs')).not.toContainText(category.filter);
 });
 
 test('mobile member editor publishes and deletes a gallery photo and persists session',async({page})=>{

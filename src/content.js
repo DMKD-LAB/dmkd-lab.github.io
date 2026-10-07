@@ -25,5 +25,6 @@ export const studentPrograms = [
 export const programs = [
   { value: 'faculty', label: 'Faculty / Professors', short: 'Faculty', profileLabel: 'Professor', description: 'Research direction, mentorship, and academic leadership.' },
   ...studentPrograms,
+  { value: 'alumni', label: 'Alumni', short: 'Alumni', profileLabel: 'Alumni', description: 'Continuing the journey beyond our lab.' },
 ];
 export const suggestedKeywords = ['Data Mining', 'Machine Learning', 'Deep Learning', 'Knowledge Discovery', 'Graph Learning', 'Natural Language Processing', 'Computer Vision', 'Explainable AI', 'Recommendation Systems', 'Time Series'];

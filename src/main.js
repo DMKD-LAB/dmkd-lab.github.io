@@ -39,7 +39,6 @@ document.querySelector('#app').innerHTML = `
       <div class="hero-slides" aria-hidden="true">
         <div class="hero-slide active" data-caption="A world of possibility" style="--position:center 57%;--mobile-position:62% center"><img src="/images/hero/background_1.webp" alt="" width="1920" height="1278" fetchpriority="high"/></div>
         <div class="hero-slide" data-caption="Patterns into perspective" style="--position:center 49%"><img src="/images/hero/background_2.webp" alt="" width="1440" height="1920" decoding="async"/></div>
-        <div class="hero-slide" data-caption="Rooted in curiosity" style="--position:center 57%;--mobile-position:62% center"><img src="/images/hero/background3.webp" alt="" width="1736" height="1142" decoding="async"/></div>
       </div>
       <div class="hero-grid container">
         <div class="hero-copy">
@@ -49,7 +48,7 @@ document.querySelector('#app').innerHTML = `
           <div class="hero-actions"><a class="button primary" href="#research">Explore our research ${icon('arrow')}</a><a class="text-link light" href="#members">Meet the people ${icon('northeast')}</a></div>
         </div>
       </div>
-      <div class="hero-bottom container"><div><span class="hero-location">DMKD LAB <span class="divider">/</span> SEOUL, SOUTH KOREA</span><span class="hero-slide-caption">01 / 03 · A world of possibility</span></div><div class="hero-controls" role="group" aria-label="Home background images"><button data-slide="0" aria-label="Show Earth at night background" aria-pressed="true"></button><button data-slide="1" aria-label="Show blue waves background" aria-pressed="false"></button><button data-slide="2" aria-label="Show campus background" aria-pressed="false"></button><button data-slideshow-toggle aria-label="Pause background slideshow">${icon('pause')}</button></div></div>
+      <div class="hero-bottom container"><div><span class="hero-location">DMKD LAB <span class="divider">/</span> SEOUL, SOUTH KOREA</span><span class="hero-slide-caption">01 / 02 · A world of possibility</span></div><div class="hero-controls" role="group" aria-label="Home background images"><button data-slide="0" aria-label="Show Earth at night background" aria-pressed="true"></button><button data-slide="1" aria-label="Show blue waves background" aria-pressed="false"></button><button data-slideshow-toggle aria-label="Pause background slideshow">${icon('pause')}</button></div></div>
     </section>
     <div class="intro-strip"><div class="container"><span>Curiosity, connected.</span><p>A research community at <strong>Duksung Women’s University</strong>.</p><a href="#apply" aria-label="Find DMKD Lab">${icon('northeast')}</a></div></div>
 
@@ -138,7 +137,8 @@ function renderPeople() {
   if(!document.querySelector('#member-list'))return;
   document.querySelector('#member-list').innerHTML = loadFailed ? `<div class="load-error">Member profiles could not be loaded. <button class="text-link" data-retry>Try again ${icon('arrow')}</button></div>` : programs.filter(p=>activeProgram==='all'||p.value===activeProgram).map(p=>{
     const people = [...(p.value==='faculty'?faculty:[]),...publicData.profiles.filter(m=>m.program===p.value)];
-    return `<div class="member-group" data-member-group="${p.value}"><div class="group-heading"><h3>${p.label} <span>${people.length.toString().padStart(2,'0')}</span></h3><p>${p.description}</p></div>${people.length?`<div class="member-grid">${people.map(memberCard).join('')}</div>`:`<div class="member-empty">${icon('user')}<span>${p.value==='faculty'?'Faculty profiles will appear here once added.':'Profiles will appear here as members join.'}</span></div>`}</div>`;
+    const emptyMessage = p.value==='faculty' ? 'Faculty profiles will appear here once added.' : p.value==='alumni' ? 'Alumni profiles will appear here once added.' : 'Profiles will appear here as members join.';
+    return `<div class="member-group" data-member-group="${p.value}"><div class="group-heading"><h3>${p.label} <span>${people.length.toString().padStart(2,'0')}</span></h3><p>${p.description}</p></div>${people.length?`<div class="member-grid">${people.map(memberCard).join('')}</div>`:`<div class="member-empty">${icon('user')}<span>${emptyMessage}</span></div>`}</div>`;
   }).join('');
 }
 

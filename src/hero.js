@@ -28,7 +28,7 @@ export function initializeHero() {
     current = index;
     slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
     selectors.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
-    caption.textContent = `${String(index + 1).padStart(2, '0')} / 03 · ${slides[index].dataset.caption}`;
+    caption.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')} · ${slides[index].dataset.caption}`;
     schedule();
   };
   const reflectPlayback = () => {

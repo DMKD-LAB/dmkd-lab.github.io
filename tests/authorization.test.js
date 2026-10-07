@@ -45,6 +45,8 @@ test('database and storage policies enforce approval, ownership, and publication
     await assert.rejects(()=>as('authenticated',alice,`update public.profiles set github_url='javascript:alert(1)' where id='${alice}'`),/check constraint/);
     await assert.rejects(()=>as('authenticated',alice,`update public.profiles set program='invalid' where id='${alice}'`),/check constraint/);
     assert.equal((await as('authenticated',alice,`update public.profiles set program='faculty' where id='${alice}' returning program`)).rows[0].program,'faculty');
+    assert.equal((await as('authenticated',alice,`update public.profiles set program='alumni' where id='${alice}' returning program`)).rows[0].program,'alumni');
+    assert.equal((await as('authenticated',bob,`update public.profiles set program='ms' where id='${alice}' returning id`)).rows.length,0);
     await assert.rejects(()=>as('authenticated',alice,`update public.profiles set avatar_path='${bob}/avatars/a.webp' where id='${alice}'`),/check constraint/);
     await as('authenticated',alice,`update public.profiles set published=true where id='${alice}'`);
     assert.equal((await as('anon',null,'select * from public.profiles')).rows.length,2);

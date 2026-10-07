@@ -35,7 +35,7 @@ grant execute on function public.valid_interests(text[]) to anon, authenticated;
 create table public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   full_name text not null check (char_length(btrim(full_name)) between 1 and 100),
-  program text not null check (program in ('faculty', 'ms', 'bsms', 'undergraduate')),
+  program text not null check (program in ('faculty', 'ms', 'bsms', 'undergraduate', 'alumni')),
   interests text[] not null default '{}' check (public.valid_interests(interests)),
   avatar_path text check (avatar_path is null or (avatar_path like id::text || '/avatars/%' and avatar_path ~ '/[a-f0-9-]+\.webp$')),
   linkedin_url text not null default '' check (char_length(linkedin_url) <= 500 and (linkedin_url = '' or linkedin_url ~ '^https://(www\.)?linkedin\.com(/[^[:space:]]*)?$')),
