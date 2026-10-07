@@ -304,6 +304,35 @@ test('imported professor and four alumni retain their portraits and profile link
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 
+test('faculty, students and alumni share card and portrait sizes at every breakpoint',async({page})=>{
+  const state=await mockBackend(page);
+  state.profile={id:uid,full_name:'Test Researcher',program:'undergraduate',published:true,avatar_path:'test/portrait.png',
+    interests:['Computer Vision','3D vision','VLA','VLM','LLM','NLP'],public_email:'researcher@example.com',
+    linkedin_url:'https://www.linkedin.com/in/test-researcher',scholar_url:'https://scholar.google.com/citations?user=test',github_url:'https://github.com/test-researcher'};
+  await page.goto(connected+'/members/');
+  const cards=page.locator('#member-list .member-card');
+  await expect(cards).toHaveCount(6);
+  await page.evaluate(()=>document.fonts.ready);
+  for(const width of [1440,1024,768,390,360]){
+    await page.setViewportSize({width,height:1000});
+    const sizes=await cards.evaluateAll(nodes=>nodes.map(card=>{
+      const bounds=card.getBoundingClientRect(),photo=card.querySelector('.member-photo').getBoundingClientRect(),details=card.querySelector('.member-details');
+      return {width:bounds.width,height:bounds.height,photoWidth:photo.width,photoHeight:photo.height,clipped:details.scrollHeight>details.clientHeight||details.scrollWidth>details.clientWidth};
+    }));
+    for(const size of sizes){
+      for(const key of ['width','height','photoWidth','photoHeight'])expect(Math.abs(size[key]-sizes[0][key]),`${width}px: equal ${key}`).toBeLessThan(1);
+      expect(Math.abs(size.photoWidth-size.photoHeight)).toBeLessThan(1);
+      expect(size.clipped).toBe(false);
+    }
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+    if(width===1440||width===390){
+      const student=cards.filter({hasText:'Test Researcher'});
+      await student.scrollIntoViewIfNeeded();
+      await page.screenshot({path:`test-results/members-uniform-${width}.png`});
+    }
+  }
+});
+
 test('mobile member editor publishes and deletes a gallery photo and persists session',async({page})=>{
   await page.setViewportSize({width:390,height:844});const state=await mockBackend(page);
   await page.goto(connected);await page.getByRole('button',{name:'Open navigation'}).click();await page.locator('.member-access').click();
