@@ -7,7 +7,8 @@ import logo from '../logo.png';
 import githubIcon from '../free-icon-github-logo-25231.png';
 import linkedinIcon from '../free-icon-linkedin-3991775.png';
 import scholarIcon from '../icons8-google-학술-검색-50.png';
-import { lab, programs, studentPrograms, publications, news, faculty } from './content.js';
+import { lab, programs, studentPrograms, publications, news, faculty, alumni } from './content.js';
+import { publicationRow } from './publications.js';
 import { icon } from './icons.js';
 import { initializeHero } from './hero.js';
 import { escapeHtml as e, safeUrl } from './validation.js';
@@ -64,8 +65,11 @@ document.querySelector('#app').innerHTML = `
 
     <section id="publications" class="section section-tint"><div class="container">
       <div class="section-heading"><div><p class="eyebrow">02 / PUBLICATIONS</p><h2>Knowledge, shared.</h2></div><span class="section-description">Our papers and research contributions.</span></div>
+      <div class="publication-categories" role="group" aria-label="Publication categories"><button class="filter-tab active" data-publication-type="all" aria-pressed="true">All publications <span>${publications.length}</span></button>${['Journal','Conference'].map(type=>`<button class="filter-tab" data-publication-type="${type}" aria-pressed="false">${type==='Journal'?'Journals':'Conferences'} <span>${publications.filter(p=>p.type===type).length}</span></button>`).join('')}</div>
       <div class="publication-toolbar"><label class="search-field">${icon('search')}<input id="publication-search" type="search" placeholder="Search title, author, or venue" aria-label="Search publications"/></label><select id="publication-year" aria-label="Filter publications by year"><option value="all">All years</option>${[...new Set(publications.map(p=>p.year))].sort((a,b)=>b-a).map(y=>`<option value="${e(y)}">${e(y)}</option>`).join('')}</select></div>
+      <p class="publication-results" id="publication-count" role="status"></p>
       <div id="publication-list"></div>
+      <p class="archive-source-note">Titles, author names, and publication status follow the <a href="https://lab.researchwho.com/DSWU-DMKD/paper/" ${external}>original lab bibliography ${icon('northeast')}</a>. Separate source entries are retained.</p>
     </div></section>
 
     <section id="news" class="section container">
@@ -81,6 +85,7 @@ document.querySelector('#app').innerHTML = `
       <div class="section-heading"><div><p class="eyebrow">04 / OUR PEOPLE</p><h2>Different minds.<br>Shared curiosity.</h2></div><div><p class="section-description">Meet the people behind the questions.</p><button class="text-link" data-member-open>Already a member? Edit your profile ${icon('arrow')}</button></div></div>
       <div class="filter-tabs" role="group" aria-label="Filter members by program"><button class="filter-tab active" data-program="all" aria-pressed="true">All members</button>${programs.map(p=>`<button class="filter-tab" data-program="${p.value}" aria-pressed="false">${p.short}</button>`).join('')}</div>
       <div id="member-list" aria-live="polite"></div>
+      <p class="archive-source-note">Faculty and alumni profiles from our <a href="https://lab.researchwho.com/DSWU-DMKD/member/" ${external}>original member directory ${icon('northeast')}</a>.</p>
     </div></section>
 
     <section id="apply" class="section container">
@@ -106,8 +111,10 @@ function renderPublications() {
   if(!document.querySelector('#publication-list'))return;
   const query = document.querySelector('#publication-search').value.toLowerCase().trim();
   const year = document.querySelector('#publication-year').value;
-  const results = publications.filter(p => `${p.title} ${p.authors} ${p.venue}`.toLowerCase().includes(query) && (year === 'all' || String(p.year) === year));
-  document.querySelector('#publication-list').innerHTML = results.length ? results.map(p => `<article class="publication-row"><span class="publication-year">${e(p.year)}</span><div><span class="small-label">${e(p.type)}</span><h3>${e(p.title)}</h3><p>${e(p.authors)}</p><span class="publication-venue">${e(p.venue)}</span></div><div class="paper-links">${safeUrl(p.url)?`<a class="text-link" href="${e(safeUrl(p.url))}" ${external}>Paper ${icon('northeast')}</a>`:''}${safeUrl(p.codeUrl)?`<a class="text-link" href="${e(safeUrl(p.codeUrl))}" ${external}>Code ${icon('northeast')}</a>`:''}</div></article>`).join('') : emptyState(publications.length?'No matching publications':'The next chapter is being written.',publications.length?'Try another search or choose a different year.':'Publications will appear here when they are added.');
+  const type = document.querySelector('[data-publication-type][aria-pressed="true"]').dataset.publicationType;
+  const results = publications.filter(p => `${p.title} ${p.authors} ${p.venue}`.toLowerCase().includes(query) && (year === 'all' || String(p.year) === year) && (type === 'all' || p.type === type));
+  document.querySelector('#publication-count').textContent = `${results.length} of ${publications.length} entries · Newest year first`;
+  document.querySelector('#publication-list').innerHTML = results.length ? results.map(publicationRow).join('') : emptyState('No matching publications','Try another search, category, or year.');
 }
 
 function renderNews() {
@@ -122,7 +129,7 @@ function renderNews() {
 }
 
 export function memberCard(profile) {
-  const photo = profile.avatar_path ? assetUrl(profile.avatar_path) : safeUrl(profile.photoUrl);
+  const photo = profile.avatar_path ? assetUrl(profile.avatar_path) : /^\/images\/members\/[a-z0-9-]+\.webp$/.test(profile.photoUrl || '') ? profile.photoUrl : safeUrl(profile.photoUrl);
   const name = profile.full_name || profile.name;
   const position=programs.find(p=>p.value===profile.program);
   const socials = [
@@ -130,13 +137,13 @@ export function memberCard(profile) {
     ['Google Scholar', profile.scholar_url || profile.scholarUrl, scholarIcon],
     ['GitHub', profile.github_url || profile.githubUrl, githubIcon],
   ].filter(([,url])=>safeUrl(url));
-  return `<article class="member-card"><div class="member-photo">${photo?`<img src="${e(photo)}" alt="Portrait of ${e(name)}" loading="lazy"/>`:`<span class="avatar-initials">${e(name?.split(/\s+/).slice(0,2).map(s=>s[0]).join('') || 'DM')}</span>`}</div><div class="member-details"><p class="small-label">${e(profile.title || position?.profileLabel || position?.short || '')}</p><h3>${e(name)}</h3><div class="interest-tags">${(profile.interests||[]).map(k=>`<span>${e(k)}</span>`).join('')}</div>${socials.length?`<div class="social-links">${socials.map(([label,url,img])=>`<a href="${e(safeUrl(url))}" ${external} aria-label="${e(name)} on ${label}"><img src="${img}" alt=""/></a>`).join('')}</div>`:''}${profile.public_email||profile.email?`<a class="member-email" href="mailto:${e(profile.public_email||profile.email)}">${icon('mail')}${e(profile.public_email||profile.email)}</a>`:''}</div></article>`;
+  return `<article class="member-card"><div class="member-photo${profile.isPlaceholder?' placeholder-photo':''}">${photo?`<img src="${e(photo)}" alt="${profile.isPlaceholder?'Profile placeholder':`Portrait of ${e(name)}`}" loading="lazy"/>`:`<span class="avatar-initials">${e(name?.split(/\s+/).slice(0,2).map(s=>s[0]).join('') || 'DM')}</span>`}</div><div class="member-details"><p class="small-label">${e(profile.title || position?.profileLabel || position?.short || '')}</p><h3>${e(name)}</h3>${profile.affiliation?`<p class="member-affiliation">${e(profile.affiliation)}</p>`:''}<div class="interest-tags">${(profile.interests||[]).map(k=>`<span>${e(k)}</span>`).join('')}</div>${socials.length?`<div class="social-links">${socials.map(([label,url,img])=>`<a href="${e(safeUrl(url))}" ${external} aria-label="${e(name)} on ${label}"><img src="${img}" alt=""/></a>`).join('')}</div>`:''}${profile.public_email||profile.email?`<a class="member-email" href="mailto:${e(profile.public_email||profile.email)}">${icon('mail')}${e(profile.public_email||profile.email)}</a>`:''}${safeUrl(profile.profileUrl)?`<a class="text-link member-profile-link" href="${e(safeUrl(profile.profileUrl))}" ${external} aria-label="Research profile of ${e(name)}">Research profile ${icon('northeast')}</a>`:''}</div></article>`;
 }
 
 function renderPeople() {
   if(!document.querySelector('#member-list'))return;
-  document.querySelector('#member-list').innerHTML = loadFailed ? `<div class="load-error">Member profiles could not be loaded. <button class="text-link" data-retry>Try again ${icon('arrow')}</button></div>` : programs.filter(p=>activeProgram==='all'||p.value===activeProgram).map(p=>{
-    const people = [...(p.value==='faculty'?faculty:[]),...publicData.profiles.filter(m=>m.program===p.value)];
+  document.querySelector('#member-list').innerHTML = (loadFailed ? `<div class="load-error">Member updates could not be loaded. <button class="text-link" data-retry>Try again ${icon('arrow')}</button></div>` : '') + programs.filter(p=>activeProgram==='all'||p.value===activeProgram).map(p=>{
+    const people = [...(p.value==='faculty'?faculty:p.value==='alumni'?alumni:[]),...publicData.profiles.filter(m=>m.program===p.value)];
     const emptyMessage = p.value==='faculty' ? 'Faculty profiles will appear here once added.' : p.value==='alumni' ? 'Alumni profiles will appear here once added.' : 'Profiles will appear here as members join.';
     return `<div class="member-group" data-member-group="${p.value}"><div class="group-heading"><h3>${p.label} <span>${people.length.toString().padStart(2,'0')}</span></h3><p>${p.description}</p></div>${people.length?`<div class="member-grid">${people.map(memberCard).join('')}</div>`:`<div class="member-empty">${icon('user')}<span>${emptyMessage}</span></div>`}</div>`;
   }).join('');
@@ -170,6 +177,8 @@ document.addEventListener('click', (event)=>{
   if(event.target.closest('[data-retry]')) refreshPublicData();
   const filter = event.target.closest('[data-program]');
   if(filter){activeProgram=filter.dataset.program;document.querySelectorAll('[data-program]').forEach(b=>{b.classList.toggle('active',b===filter);b.setAttribute('aria-pressed',String(b===filter));});renderPeople();}
+  const publicationFilter = event.target.closest('[data-publication-type]');
+  if(publicationFilter){document.querySelectorAll('[data-publication-type]').forEach(button=>{button.classList.toggle('active',button===publicationFilter);button.setAttribute('aria-pressed',String(button===publicationFilter));});renderPublications();}
   if(event.target.closest('#main-nav a')) {document.querySelector('#main-nav').classList.remove('open');document.querySelector('.menu-toggle').setAttribute('aria-expanded','false');document.querySelector('.menu-toggle').setAttribute('aria-label','Open navigation');}
   const photoButton = event.target.closest('[data-photo]');
   if(photoButton){

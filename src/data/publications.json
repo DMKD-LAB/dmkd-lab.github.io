@@ -1,0 +1,1489 @@
+[
+  {
+    "id": "paper-object-748",
+    "sourceNumber": 60,
+    "title": "Hierarchical Multimodal Large Language Model-Based Interpretation and Aggregation of PDP and ICE Explanations for Battery State-of-Charge Prediction in Electric Vehicles",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "Batteries",
+    "date": "2026.10",
+    "year": 2026,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "Accepted, Production"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-748"
+  },
+  {
+    "id": "paper-object-746",
+    "sourceNumber": 59,
+    "title": "An Agent-Based Intelligent Literature Analysis Framework for the Taxonomy of Controllable Diffusion-Based Text-to-Video Generation",
+    "authors": "Minjin Kim, Soyul Youn, Jiye Park, and Jehyeok Rew",
+    "venue": "JOURNAL OF BROADCAST ENGINEERING",
+    "date": "2026.09.30",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.kibme.org/resources/journal/20260930175455101.pdf",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-746"
+  },
+  {
+    "id": "paper-object-747",
+    "sourceNumber": 58,
+    "title": "나이브 베이즈 기반 확률 모형을 이용한 LLM 기반 파생변수 생성의 성능 향상 예측:신용카드 사기 탐지를 중심으로",
+    "authors": "Yeeun Kang, Seungju Lee, Jehyeok Rew",
+    "venue": "Korean Journal of Digital Industry",
+    "date": "2026.09",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003374663",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-747"
+  },
+  {
+    "id": "paper-object-743",
+    "sourceNumber": 57,
+    "title": "Pedestrian Risk Area Analysis Using Street View-based Object Detection and Urban Spatial Information",
+    "authors": "Hae-In Seo, Eun-Chong Lee, Jehyeok Rew",
+    "venue": "Korea Information Processing Society · 15(8):681-695",
+    "date": "2026.08",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://tkips.kips.or.kr/digital-library/107949",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-743"
+  },
+  {
+    "id": "paper-object-742",
+    "sourceNumber": 56,
+    "title": "Interpreting Electric Vehicle Powertrain Fault Diagnosis Models Using Multimodal Large Language Model-Based Permutation Feature Importance and Leave-One-Feature-Out Importance Analysis Agents",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "CMES-Computer Modeling in Engineering & Sciences",
+    "date": "2026.07.28",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.techscience.com/CMES/online/detail/27868",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-742"
+  },
+  {
+    "id": "paper-object-733",
+    "sourceNumber": 55,
+    "title": "Feasibility of CBCT-Based Deep Learning for Predicting 3D Soft Tissue Changes After Orthognathic Surgery in Skeletal Class III Patients",
+    "authors": "Hyunmi Jo, Joo-Young Ohe, Baek-Soo Lee, Byung-Joon Choi, Hyeonwoo Kim, Jehyeok Rew*, Jun-Young Kim*",
+    "venue": "Scientific Reports",
+    "date": "2026.07",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.nature.com/articles/s41598-026-61065-w",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "Accepted, Production"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-733"
+  },
+  {
+    "id": "paper-object-739",
+    "sourceNumber": 54,
+    "title": "Interpreting Electric Vehicle Powertrain Fault Diagnosis Models using Multimodal Large Language Model-based Permutation Feature Importance and Leave-One-Feature-Out Importance Analysis Agents",
+    "authors": "Jaeseung Lee, Jehyeok Rew*",
+    "venue": "CMES-Computer Modeling in Engineering & Sciences",
+    "date": "2026.07",
+    "year": 2026,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "Accepted, Production"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-739"
+  },
+  {
+    "id": "paper-object-734",
+    "sourceNumber": 53,
+    "title": "SAM 기반 병변 분할과 VLM 기반 의미론적 해석을 이용한 설명 가능한 유방암 진단 프레임워크",
+    "authors": "서해인, 유제혁",
+    "venue": "Journal of Platform Technology",
+    "date": "2026.06.30",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://jpt.ictps.org/all_volumes/volume11volume14/volume-14-no-2",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-734"
+  },
+  {
+    "id": "paper-object-722",
+    "sourceNumber": 52,
+    "title": "Multimodal Large Language Model-based Shapley Interaction Quantification Analysis for Interpretation of Battery State-of-Charge Prediction in Electric Vehicles",
+    "authors": "Jaeseung Lee, Jehyeok Rew*",
+    "venue": "Applied Sciences",
+    "date": "2026.05.12",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.mdpi.com/2076-3417/16/10/4812",
+    "doiUrl": "https://doi.org/10.3390/app16104812",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.3390/app16104812",
+      "Accpeted"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-722"
+  },
+  {
+    "id": "paper-object-718",
+    "sourceNumber": 51,
+    "title": "DRIVE: Diagnostic Report Integration via VLM and LLM Explanations for Explainable Vehicle Engine Fault Diagnosis",
+    "authors": "Jaeseung Lee, Jehyeok Rew*",
+    "venue": "CMES-Computer Modeling in Engineering and Sciences",
+    "date": "2026.04.03",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.techscience.com/CMES/online/detail/26431",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-718"
+  },
+  {
+    "id": "paper-object-714",
+    "sourceNumber": 50,
+    "title": "Multimodal Large Language Model-based Explainable Boosting Machine Analysis for Interpretation of State-of-Health Prediction of Lithium-ion Batteries",
+    "authors": "Jaehyeok Lee, Jaeseung Lee, Jehyeok Rew*",
+    "venue": "Electronics",
+    "date": "2026.04",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.mdpi.com/2079-9292/15/8/1675",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "Accepted, Production"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-714"
+  },
+  {
+    "id": "paper-object-717",
+    "sourceNumber": 49,
+    "title": "Multi-Agent Large Language Model-Based Decision Tree Analysis for Explainable Electric Vehicle Drive Motor Fault Diagnosis",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "Computers, Materials & Continua",
+    "date": "2026.03.31",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.techscience.com/cmc/online/detail/26385",
+    "doiUrl": "https://doi.org/10.32604/cmc.2026.077691",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.32604/cmc.2026.077691"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-717"
+  },
+  {
+    "id": "paper-object-715",
+    "sourceNumber": 48,
+    "title": "비전-언어 모델 기반 Grad-CAM 분석을 통한 설명가능한 전기자동차 구동 모터 고장 진단",
+    "authors": "천서형, 이재승, 유제혁",
+    "venue": "2026년 · 자동차안전학회지 · 18(1):29~46",
+    "date": "2026.03.18",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.techscience.com/CMES/online/detail/26431",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "https://journal.kasa.kr/media/sites/kasa/2026-018-01/N0380180103/N0380180103.pdf",
+      "Accepted"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-715"
+  },
+  {
+    "id": "paper-object-713",
+    "sourceNumber": 47,
+    "title": "스트리트 뷰 객체 인식과 도시 공간정보 분석을 통한 보행 위험 지역 분석 및 안전 모니터링 기법",
+    "authors": "서해인, 이은총, 유제혁",
+    "venue": "정보처리학회논문지. 소프트웨어 및 데이터 공학",
+    "date": "2026",
+    "year": 2026,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "Accepted"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-713"
+  },
+  {
+    "id": "paper-object-706",
+    "sourceNumber": 46,
+    "title": "Diagnostic Report Integration via VLM and LLM Explanations for Explainable Vehicle Engine Fault Diagnosis",
+    "authors": "Jaeseung Lee, Jehyeok Rew*",
+    "venue": "CMES-Computer Modeling in Engineering & Sciences",
+    "date": "2026",
+    "year": 2026,
+    "type": "Journal",
+    "url": "https://www.techscience.com/CMES/v147n1/67120",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "Accepted, Production"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-706"
+  },
+  {
+    "id": "paper-object-721",
+    "sourceNumber": 45,
+    "title": "Multimodal Large Language Model-based Shapley Interaction Quantification Analysis for Interpretation of Battery State-of-Charge Prediction in Electric Vehicles",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "Applied Sciences",
+    "date": "2026",
+    "year": 2026,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)",
+      "Submitted"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-721"
+  },
+  {
+    "id": "paper-object-705",
+    "sourceNumber": 44,
+    "title": "Point Transformer 와 적응형 랜드마크 선별 추론을 이용한 3 차원 얼굴 랜드마크 검출 방법",
+    "authors": "박지예, 유제혁",
+    "venue": "Journal of Platform Technology · 13(6):71-81",
+    "date": "2025.12",
+    "year": 2025,
+    "type": "Journal",
+    "url": "http://doi.org/10.23023/JPT.2025.13.6.071",
+    "doiUrl": "http://doi.org/10.23023/JPT.2025.13.6.071",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "(DOI) http://doi.org/10.23023/JPT.2025.13.6.071"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-705"
+  },
+  {
+    "id": "paper-object-697",
+    "sourceNumber": 43,
+    "title": "Memory-Augmented Large Language Model for Enhanced Chatbot Services in University Learning Management Systems",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "Applied Sciences",
+    "date": "2025.09.05",
+    "year": 2025,
+    "type": "Journal",
+    "url": "https://www.mdpi.com/2076-3417/15/17/9775",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-697"
+  },
+  {
+    "id": "paper-object-698",
+    "sourceNumber": 42,
+    "title": "Automated Change History Analysis of Software Bill of Materials(SBOM) using Large Language Model-based Structural Analysis and Forgery Detection Agents",
+    "authors": "이재승, 유제혁",
+    "venue": "[KCI] 한국산업정보학회논문지 · 30(4):39-60",
+    "date": "2025.08",
+    "year": 2025,
+    "type": "Journal",
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003238124",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "(ISSN) 1229-3741"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-698"
+  },
+  {
+    "id": "paper-object-704",
+    "sourceNumber": 41,
+    "title": "거대언어모델 기반 구조 분석 및 위조 탐지 에이전트를 활용한 소프트웨어 자재 명세서(SBOM) 변경 이력 자동 분석 기법",
+    "authors": "이재승, 유제혁",
+    "venue": "[KCI] 한국산업정보학회논문지 · 30(4):39 - 60",
+    "date": "2025.08",
+    "year": 2025,
+    "type": "Journal",
+    "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12341775",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-704"
+  },
+  {
+    "id": "paper-object-684",
+    "sourceNumber": 40,
+    "title": "Vision-Language Model-Based Local Interpretable Model-Agnostic Explanations Analysis for Explainable In-Vehicle Controller Area Network Intrusion Detection",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "Sensors",
+    "date": "2025.05.10",
+    "year": 2025,
+    "type": "Journal",
+    "url": "https://www.mdpi.com/1424-8220/25/10/3020",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-684"
+  },
+  {
+    "id": "paper-object-696",
+    "sourceNumber": 39,
+    "title": "Multi-Scale Graph Neural Network for Multivariate Time-Series Anomaly Detection",
+    "authors": "이재승, 백남균, 유제혁",
+    "venue": "한국산업정보학회 · 제30권(제1호):51-65",
+    "date": "2025.02",
+    "year": 2025,
+    "type": "Journal",
+    "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12093014",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-696"
+  },
+  {
+    "id": "conference-object-222",
+    "sourceNumber": 25,
+    "title": "오버샘플링 기법을 활용한 신용카드 연체 예측 성능 향상 연구",
+    "authors": "배서진, 고다은, 신채연, 유제혁",
+    "venue": "한국전자거래학회 추계학술대회",
+    "date": "2025.11.29 - 2025.11.29",
+    "year": 2025,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-222"
+  },
+  {
+    "id": "conference-object-223",
+    "sourceNumber": 24,
+    "title": "거대언어모델 활용과 불균형 클래스 문제를 고려한 카드 거래 이상 탐지 기법",
+    "authors": "강예은, 이승주, 안혜림, 김나연, 유제혁",
+    "venue": "한국전자거래학회 추계학술대회",
+    "date": "2025.11.29 - 2025.11.29",
+    "year": 2025,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea",
+      "우수논문상 수상"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-223"
+  },
+  {
+    "id": "conference-object-221",
+    "sourceNumber": 23,
+    "title": "금융 기사를 활용한 KoBERT 기반 뉴스 감정 분석: 국내 주식시장 사이드카 발동 전후를 중심으로",
+    "authors": "이고은, 유제혁",
+    "venue": "한국전자거래학회 추계학술대회",
+    "date": "2025.11.29 - 2025.11.29",
+    "year": 2025,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-221"
+  },
+  {
+    "id": "conference-object-224",
+    "sourceNumber": 22,
+    "title": "거대언어모델 기반 LIME 분석을 통한 설명가능한 전기자동차 에너지 사용량 예측 기법",
+    "authors": "이재승, 천서형, 유제혁",
+    "venue": "한국자동차모빌리티안전학회 추계학술대회",
+    "date": "2025.11.20 - 2025.11.22",
+    "year": 2025,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-224"
+  },
+  {
+    "id": "conference-object-219",
+    "sourceNumber": 21,
+    "title": "CoDU: 단계적 접근을 통한 복합 문서 구조 이해 기법",
+    "authors": "김가빈, 이민혜, 서해인, 유제혁",
+    "venue": "한국정보과학회 KDBC 학술대회",
+    "date": "2025.11.07 - 2025.11.08",
+    "year": 2025,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-219"
+  },
+  {
+    "id": "conference-object-218",
+    "sourceNumber": 20,
+    "title": "복합 스타일 임베딩을 활용한 Diffusion 기반 손글씨 생성 모델",
+    "authors": "박지예, 유제혁",
+    "venue": "한국정보과학회 KDBC 학술대회",
+    "date": "2025.11.07 - 2025.11.08",
+    "year": 2025,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-218"
+  },
+  {
+    "id": "conference-object-220",
+    "sourceNumber": 19,
+    "title": "스트리트 뷰 객체 인식과 도시 공간정보를 활용한 보행 안전 모니터링 기법",
+    "authors": "서해인, 이은총, 유제혁",
+    "venue": "한국정보처리학회 추계학술발표대회",
+    "date": "2025.11.06 - 2025.11.08",
+    "year": 2025,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea",
+      "우수논문상 수상"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-220"
+  },
+  {
+    "id": "conference-object-217",
+    "sourceNumber": 18,
+    "title": "Attention Wave-U-Net 기반의 음원 분리 기법",
+    "authors": "이민혜, 유제혁",
+    "venue": "한국정보과학회 2025 한국컴퓨터종합학술대회",
+    "date": "2025.07.02 - 2025.07.04",
+    "year": 2025,
+    "type": "Conference",
+    "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318803",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea",
+      "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318803"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-217"
+  },
+  {
+    "id": "conference-object-215",
+    "sourceNumber": 17,
+    "title": "Meta Learner를 활용한 2단계 전력 사용량 예측 방법",
+    "authors": "이고은, 유제혁",
+    "venue": "한국정보과학회 2025 한국컴퓨터종합학술대회",
+    "date": "2025.07.02 - 2025.07.04",
+    "year": 2025,
+    "type": "Conference",
+    "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318208",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea",
+      "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318208"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-215"
+  },
+  {
+    "id": "conference-object-216",
+    "sourceNumber": 16,
+    "title": "SPTC(Single Pass Tree Chain-of-thought) : SLM에서의 효율적인 프롬프팅 기법",
+    "authors": "김가빈, 박지예, 유제혁",
+    "venue": "한국정보과학회 2025 한국컴퓨터종합학술대회",
+    "date": "2025.07.02 - 2025.07.04",
+    "year": 2025,
+    "type": "Conference",
+    "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318736",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea",
+      "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318736"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-216"
+  },
+  {
+    "id": "paper-object-616",
+    "sourceNumber": 38,
+    "title": "Large Language Models-based Feature Extraction for Short-Term Load Forecasting",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "Korea Society of Industrial Information Systems · 29(3):51-65",
+    "date": "2024.06.14",
+    "year": 2024,
+    "type": "Journal",
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003095627",
+    "doiUrl": "https://doi.org/10.9723/jksiis.2024.29.3.051",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.9723/jksiis.2024.29.3.051"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-616"
+  },
+  {
+    "id": "paper-object-615",
+    "sourceNumber": 37,
+    "title": "Wild Bird Sound Classification Scheme using Focal Loss and Ensemble Learning",
+    "authors": "Jaeseung Lee, Jehyeok Rew",
+    "venue": "Korea Society of Industrial Information Systems · 29(2):11-25",
+    "date": "2024.06.06",
+    "year": 2024,
+    "type": "Journal",
+    "url": "https://doi.org/10.9723/jksiis.2024.29.2.015",
+    "doiUrl": "https://doi.org/10.9723/jksiis.2024.29.2.015",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.9723/jksiis.2024.29.2.015"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-615"
+  },
+  {
+    "id": "paper-object-613",
+    "sourceNumber": 36,
+    "title": "Deepfake Image Detection based on Visual Saliency",
+    "authors": "Harim Noh, Jehyeok Rew",
+    "venue": "Platform Technology · 12(1):128-140",
+    "date": "2024.02.26",
+    "year": 2024,
+    "type": "Journal",
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003059422",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "(기타) 2289-019X"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-613"
+  },
+  {
+    "id": "paper-object-614",
+    "sourceNumber": 35,
+    "title": "Development of a Personal Color Diagnosis and Virtual Makeup Application Based on Facial Color Data Analysis",
+    "authors": "안예은, 이규빈, 정수현, 김희수, 유제혁",
+    "venue": "Korean Society of Media and Arts · 22(2):41-57",
+    "date": "2024.02",
+    "year": 2024,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "(기타) https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-614"
+  },
+  {
+    "id": "conference-object-147",
+    "sourceNumber": 15,
+    "title": "모발 이미지 합성 및 증강을 통한 모발 객체 분할 성능 향상 기법",
+    "authors": "박세림, 노하림, 유제혁",
+    "venue": "한국정보과학회 2024 한국컴퓨터종합학술대회",
+    "date": "2024.06.26 - 2024.06.28",
+    "year": 2024,
+    "type": "Conference",
+    "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11862479",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea",
+      "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11862479"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-147"
+  },
+  {
+    "id": "conference-object-148",
+    "sourceNumber": 14,
+    "title": "두피 상태 관리를 위한 YOLO 모델 기반 실시간 모근 검출 기법",
+    "authors": "백소민, 유제혁",
+    "venue": "한국정보과학회 2024 한국컴퓨터종합학술대회",
+    "date": "2024.06.26 - 2024.06.28",
+    "year": 2024,
+    "type": "Conference",
+    "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11862441",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "South Korea",
+      "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11862441"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-148"
+  },
+  {
+    "id": "paper-object-187",
+    "sourceNumber": 34,
+    "title": "Language and vision based person re-identification for surveillance systems using deep learning with LIP layers",
+    "authors": "Maryam Bukhari, Sadaf Yasmin, Sheneela Naz, Muazzam Maqsood, Jehyeok Rew, Seungmin Rho",
+    "venue": "Image and Vision Computing · 132",
+    "date": "2023.04.01",
+    "year": 2023,
+    "type": "Journal",
+    "url": "https://doi.org/10.1016/j.imavis.2023.104658",
+    "doiUrl": "https://doi.org/10.1016/j.imavis.2023.104658",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.1016/j.imavis.2023.104658"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-187"
+  },
+  {
+    "id": "paper-object-188",
+    "sourceNumber": 33,
+    "title": "Hybrid Segmentation Scheme for Skin Features Extraction Using Dermoscopy Images",
+    "authors": "Jehyeok Rew, Hyungjoon Kim, Eenjun Hwang",
+    "venue": "Computers, Materials & Continua · 68(1):801-817",
+    "date": "2021.06.04",
+    "year": 2021,
+    "type": "Journal",
+    "url": "https://doi.org/10.32604/cmc.2021.017892",
+    "doiUrl": "https://doi.org/10.32604/cmc.2021.017892",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) www.doi.org/10.32604/cmc.2021.017892"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-188"
+  },
+  {
+    "id": "paper-object-189",
+    "sourceNumber": 32,
+    "title": "UFC-Net with Fully-Connected Layers and Hadamard Identity Skip Connection for Image Inpainting",
+    "authors": "Chung-Il Kim, Jehyeok Rew, Yongjang Cho, Eenjun Hwang",
+    "venue": "Computers, Materials & Continua · 68(3):3447-3463",
+    "date": "2021.05.06",
+    "year": 2021,
+    "type": "Journal",
+    "url": "https://www.techscience.com/cmc/v68n3/42",
+    "doiUrl": "",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-189"
+  },
+  {
+    "id": "paper-object-190",
+    "sourceNumber": 31,
+    "title": "A Robust Prediction Model for Species Distribution Using Bagging Ensembles with Deep Neural Networks",
+    "authors": "Jehyeok Rew, Yongjang Cho, Eenjun Hwang",
+    "venue": "Remote Sensing · 13(8)",
+    "date": "2021.04.13",
+    "year": 2021,
+    "type": "Journal",
+    "url": "https://doi.org/10.3390/rs13081495",
+    "doiUrl": "https://doi.org/10.3390/rs13081495",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.3390/rs13081495",
+      "Special Issue Remote Sensing for Biodiversity Mapping and Monitoring"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-190"
+  },
+  {
+    "id": "paper-object-191",
+    "sourceNumber": 30,
+    "title": "Prediction of Coniferous Species Distribution based on Ensemble Model under Future Climate Change",
+    "authors": "Yongjang Cho, Jehyeok Rew, Eenjun Hwang",
+    "venue": "SIGDB · 36(3):3-19",
+    "date": "2020.12",
+    "year": 2020,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-191"
+  },
+  {
+    "id": "paper-object-192",
+    "sourceNumber": 29,
+    "title": "Animal Sounds Classification Scheme Based on Multi-Feature Network with Mixed Datasets",
+    "authors": "Chung-Il Kim, Yongjang Cho, Seungwon Jung, Jehyeok Rew, Eenjun Hwang",
+    "venue": "KSII Transactions on Internet and Information Systems · 14(8):3384-3398",
+    "date": "2020.08.01",
+    "year": 2020,
+    "type": "Journal",
+    "url": "https://doi.org/10.3837/tiis.2020.08.013",
+    "doiUrl": "https://doi.org/10.3837/tiis.2020.08.013",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) www.doi.org/10.3837/tiis.2020.08.013"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-192"
+  },
+  {
+    "id": "paper-object-193",
+    "sourceNumber": 28,
+    "title": "시맨틱 얼굴 이미지 분할과 Triplet Loss 를 활용한 얼굴 인식 기법",
+    "authors": "고범연， 김현우， 유제혁， 황인준",
+    "venue": "한국정보과학회 학술발표논문집:455-457",
+    "date": "2020.07",
+    "year": 2020,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-193"
+  },
+  {
+    "id": "paper-object-194",
+    "sourceNumber": 27,
+    "title": "FLSNet: robust facial landmark semantic segmentation",
+    "authors": "Hyungjoon Kim, Hyeonwoo Kim, Jehyeok Rew, Eenjun Hwang",
+    "venue": "IEEE Access · 8:116163 - 116175",
+    "date": "2020.06.23",
+    "year": 2020,
+    "type": "Journal",
+    "url": "https://doi.org/10.1109/ACCESS.2020.3004359",
+    "doiUrl": "https://doi.org/10.1109/ACCESS.2020.3004359",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) www.doi.org/10.1109/ACCESS.2020.3004359"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-194"
+  },
+  {
+    "id": "paper-object-195",
+    "sourceNumber": 26,
+    "title": "Combination of short-term load forecasting models based on a stacking ensemble approach",
+    "authors": "Jihoon Moon, Seungwon Jung, Jehyeok Rew, Seungmin Rho, Eenjun Hwang",
+    "venue": "Energy and Buildings · 216",
+    "date": "2020.06.01",
+    "year": 2020,
+    "type": "Journal",
+    "url": "https://doi.org/10.1016/j.enbuild.2020.109921",
+    "doiUrl": "https://doi.org/10.1016/j.enbuild.2020.109921",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.1016/j.enbuild.2020.109921"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-195"
+  },
+  {
+    "id": "paper-object-196",
+    "sourceNumber": 25,
+    "title": "Habitat suitability estimation using a two-stage ensemble approach",
+    "authors": "Jehyeok Rew, Yongjang Cho, Jihoon Moon, Eenjun Hwang",
+    "venue": "Remote Sensing · 12(9):1475",
+    "date": "2020.05.06",
+    "year": 2020,
+    "type": "Journal",
+    "url": "https://doi.org/10.3390/rs12091475",
+    "doiUrl": "https://doi.org/10.3390/rs12091475",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.3390/rs12091475"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-196"
+  },
+  {
+    "id": "conference-object-19",
+    "sourceNumber": 13,
+    "title": "Stacked Hourglass 기반의 영유아 자세 추정 기법",
+    "authors": "김은빈, 조용장, 유제혁, 박진웅, 황인준",
+    "venue": "한국정보과학회 2020 한국소프트웨어종합학술대회",
+    "date": "2020.12",
+    "year": 2020,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-19"
+  },
+  {
+    "id": "conference-object-20",
+    "sourceNumber": 12,
+    "title": "cGAN을 활용한 지도 학습 기반 포즈 전이 기법",
+    "authors": "심종화, 김충일, 정승원, 유제혁, 황인준",
+    "venue": "한국멀티미디어학회 2020 추계학술대회",
+    "date": "2020.11",
+    "year": 2020,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-20"
+  },
+  {
+    "id": "conference-object-21",
+    "sourceNumber": 11,
+    "title": "Random Forest를 이용한 특정 식물 서식지 분포 예측",
+    "authors": "조용장, 유제혁, 황인준",
+    "venue": "Korean DataBase Conference(KDBC)",
+    "date": "2020.09",
+    "year": 2020,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-21"
+  },
+  {
+    "id": "paper-object-197",
+    "sourceNumber": 24,
+    "title": "Animal movement prediction based on predictive recurrent neural network",
+    "authors": "Jehyeok Rew, Sungwoo Park, Yongjang Cho, Seungwon Jung, Eenjun Hwang",
+    "venue": "Sensors · 19(20):4411",
+    "date": "2019.10.11",
+    "year": 2019,
+    "type": "Journal",
+    "url": "https://doi.org/10.3390/s19204411",
+    "doiUrl": "https://doi.org/10.3390/s19204411",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.3390/s19204411"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-197"
+  },
+  {
+    "id": "paper-object-198",
+    "sourceNumber": 23,
+    "title": "Evaluating indoor positioning systems in a shopping mall: The lessons learned from the IPIN 2018 competition",
+    "authors": "",
+    "venue": "IEEE Access · 7:148594-148628",
+    "date": "2019.09.30",
+    "year": 2019,
+    "type": "Journal",
+    "url": "https://doi.org/10.1109/ACCESS.2019.2944389",
+    "doiUrl": "https://doi.org/10.1109/ACCESS.2019.2944389",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) www.doi.org/10.1109/ACCESS.2019.2944389"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-198"
+  },
+  {
+    "id": "paper-object-199",
+    "sourceNumber": 22,
+    "title": "Video-based learning assistant scheme for sustainable education",
+    "authors": "Seungwon Jung, Minjae Son, Chung-il Kim, Jehyeok Rew, Eenjun Hwang",
+    "venue": "New Review of Hypermedia and Multimedia · 25(3):161-181",
+    "date": "2019.07.03",
+    "year": 2019,
+    "type": "Journal",
+    "url": "https://doi.org/10.1080/13614568.2019.1678682",
+    "doiUrl": "https://doi.org/10.1080/13614568.2019.1678682",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.1080/13614568.2019.1678682"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-199"
+  },
+  {
+    "id": "paper-object-200",
+    "sourceNumber": 21,
+    "title": "Skin Aging Estimation Scheme Based on Lifestyle and Dermoscopy Image Analysis",
+    "authors": "Jehyeok Rew, Young-Hwan Choi, Hyungjoon Kim, Eenjun Hwang",
+    "venue": "Applied Sciences · 9(6):1228",
+    "date": "2019.03.23",
+    "year": 2019,
+    "type": "Journal",
+    "url": "https://doi.org/10.3390/app9061228",
+    "doiUrl": "https://doi.org/10.3390/app9061228",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.3390/app9061228"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-200"
+  },
+  {
+    "id": "conference-object-22",
+    "sourceNumber": 10,
+    "title": "Classifying Animal Sounds using Multi-Feature Network",
+    "authors": "C. Kim, Y. Cho, S. Jung, J. Rew, E. Hwang.",
+    "venue": "KSII The 11th International Conference on Internet (ICONI) 2019",
+    "date": "2019.12",
+    "year": 2019,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-22"
+  },
+  {
+    "id": "conference-object-23",
+    "sourceNumber": 9,
+    "title": "Oriental stork Habitat Suitability Prediction based on Various Machine Learning Methods",
+    "authors": "조용장， 유제혁， 김충일， 황인준.",
+    "venue": "한국정보과학회 2019 한국소프트웨어종합학술대회",
+    "date": "2019.12",
+    "year": 2019,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-23"
+  },
+  {
+    "id": "conference-object-24",
+    "sourceNumber": 8,
+    "title": "생태 환경 분석을 위한 동물소리 수집 및 처리 플랫폼",
+    "authors": "조용장， 정승원， 유제혁， 황인준",
+    "venue": "Korean DataBase Conference(KDBC)",
+    "date": "2019.10",
+    "year": 2019,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-24"
+  },
+  {
+    "id": "paper-object-201",
+    "sourceNumber": 20,
+    "title": "Towards a Sustainable Open Platform for Location Intelligence and Convergence",
+    "authors": "Eunyoung Cho, Sangjoon Park, Jehyeok Rew, Changjun Park, Soowhan Lee, Youngmong Park",
+    "venue": "IEEE",
+    "date": "2018.10.17",
+    "year": 2018,
+    "type": "Journal",
+    "url": "https://doi.org/10.1109/ICTC.2018.8539487",
+    "doiUrl": "https://doi.org/10.1109/ICTC.2018.8539487",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) www.doi.org/10.1109/ICTC.2018.8539487",
+      "2018 International Conference on Information and Communication Technology Convergence (ICTC)"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-201"
+  },
+  {
+    "id": "paper-object-202",
+    "sourceNumber": 19,
+    "title": "지속 가능한 보행자 길 안내 서비스 개방 플랫폼 방안",
+    "authors": "조은영， 박상준， 유제혁， 박창준， 이수환， 박영몽",
+    "venue": "한국통신학회 학술대회논문집:706 - 707",
+    "date": "2018.06",
+    "year": 2018,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-202"
+  },
+  {
+    "id": "paper-object-205",
+    "sourceNumber": 18,
+    "title": "모바일 위치 기반 서비스 및 플랫폼 현황",
+    "authors": "조은영， 박상준， 박영몽， 유제혁， 박창준， 이용현， 이상균， 이금렬",
+    "venue": "한국통신학회지 (정보와통신) · 35(4):67-76",
+    "date": "2018.03",
+    "year": 2018,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-205"
+  },
+  {
+    "id": "paper-object-204",
+    "sourceNumber": 17,
+    "title": "복합측위 기술을 이용한 실내외 막힘없는 평창올림픽 AR 길안내 서비스",
+    "authors": "이금렬， 이용현， 박창준， 유제혁， 박상준， 조은영， 이소연",
+    "venue": "한국통신학회지 (정보와통신):44-50",
+    "date": "2018.03",
+    "year": 2018,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-204"
+  },
+  {
+    "id": "paper-object-206",
+    "sourceNumber": 16,
+    "title": "An intelligent skin health advising scheme based on medical data",
+    "authors": "박지수， 유제혁， 김형준， 황인준",
+    "venue": "한국정보과학회 학술발표논문집",
+    "date": "2017.06",
+    "year": 2017,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-206"
+  },
+  {
+    "id": "paper-object-203",
+    "sourceNumber": 15,
+    "title": "Monitoring skin condition using life activities on the SNS user documents",
+    "authors": "Jehyeok Rew, Eenjun Hwang, Young-Hwan Choi, Seungmin Rho",
+    "venue": "Multimedia Tools and Applications · 77:9827–9847",
+    "date": "2017.04.22",
+    "year": 2017,
+    "type": "Journal",
+    "url": "https://doi.org/10.1007/s11042-017-4623-z",
+    "doiUrl": "https://doi.org/10.1007/s11042-017-4623-z",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.1007/s11042-017-4623-z"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-203"
+  },
+  {
+    "id": "paper-object-207",
+    "sourceNumber": 14,
+    "title": "Evaluation of hair and scalp condition based on microscopy image analysis",
+    "authors": "Hyungjoon Kim, Woogeol Kim, Jeheok Rew, Seungmin Rho, Jisoo Park, Eenjun Hwang",
+    "venue": "IEEE",
+    "date": "2017.03.23",
+    "year": 2017,
+    "type": "Journal",
+    "url": "https://doi.org/10.1109/PlatCon.2017.7883708",
+    "doiUrl": "https://doi.org/10.1109/PlatCon.2017.7883708",
+    "tags": [],
+    "notes": [
+      "(DOI) www.doi.org/10.1109/PlatCon.2017.7883708",
+      "2017 International conference on platform technology and service (PlatCon)"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-207"
+  },
+  {
+    "id": "paper-object-208",
+    "sourceNumber": 13,
+    "title": "Make-up Contents Recommendation Scheme Based on Personal Color Analysis",
+    "authors": "Jisoo Park, Jehyeok Rew, Seungmin Rho, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference:712-715",
+    "date": "2016.10.27",
+    "year": 2016,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2016m10a.712",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2016m10a.712",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2016m10a.712"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-208"
+  },
+  {
+    "id": "paper-object-209",
+    "sourceNumber": 12,
+    "title": "Microscopy image analysis scheme for estimating scalp condition",
+    "authors": "Hyungjun Kim, Woogeol Kim, Byungjin Na, Jehyeok Rew, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference:740-742",
+    "date": "2016.04.29",
+    "year": 2016,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2016m04a.740",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2016m04a.740",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2016m04a.740"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-209"
+  },
+  {
+    "id": "conference-object-25",
+    "sourceNumber": 7,
+    "title": "시맨틱 태그 분석을 통한 효과적인 음악 추천 기법",
+    "authors": "한상훈， 김우걸， 유제혁， 전상훈， 황인준",
+    "venue": "한국스마트미디어학회&한국전자거래학회 춘계학술대회",
+    "date": "2016.04",
+    "year": 2016,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-25"
+  },
+  {
+    "id": "paper-object-210",
+    "sourceNumber": 11,
+    "title": "Purpose-based Travel Destination Classification Scheme Using SNS Hashtags",
+    "authors": "문지훈， 유제혁， 김용성， 황인준",
+    "venue": "한국정보과학회 학술발표논문집",
+    "date": "2015.12",
+    "year": 2015,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-210"
+  },
+  {
+    "id": "paper-object-213",
+    "sourceNumber": 10,
+    "title": "A hair density measuring scheme using smartphone",
+    "authors": "Woogeol Kim, Hyungjun Kim, Jehyeok Rew, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference:1416-1419",
+    "date": "2015.10.28",
+    "year": 2015,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2015m10a.1416",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2015m10a.1416",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2015m10a.1416"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-213"
+  },
+  {
+    "id": "paper-object-214",
+    "sourceNumber": 9,
+    "title": "Hair thickness measuring scheme based on portable camera image",
+    "authors": "Hyungjun Kim, Woogeol Kim, Jehyeok Rew, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference:1420-1423",
+    "date": "2015.10.28",
+    "year": 2015,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2015m10a.1420",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2015m10a.1420",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2015m10a.1420"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-214"
+  },
+  {
+    "id": "paper-object-211",
+    "sourceNumber": 8,
+    "title": "The 'speckleometer': a compact, portable surface roughness measurement unit based on angular speckle correlation",
+    "authors": "S Lake, J Rew, CD Stacey, JP Sargent",
+    "venue": "Insight-Non-Destructive Testing and Condition Monitoring · 57(9):513-517",
+    "date": "2015.09.01",
+    "year": 2015,
+    "type": "Journal",
+    "url": "https://doi.org/10.1784/insi.2015.57.9.513",
+    "doiUrl": "https://doi.org/10.1784/insi.2015.57.9.513",
+    "tags": [
+      "SCI(E)"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.1784/insi.2015.57.9.513"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-211"
+  },
+  {
+    "id": "paper-object-212",
+    "sourceNumber": 7,
+    "title": "Runner’s Jukebox: A Music Player for Running Using Pace Recognition and Music Mixing",
+    "authors": "Sanghoon Jun, Jehyeok Rew, E Hwang",
+    "venue": "International Conferences on Advances in Multimedia · (7):26",
+    "date": "2015.04.19",
+    "year": 2015,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [
+      "(ISBN) 978-1-61208-400-8",
+      "MMEDIA 2015 : The Seventh International Conferences on Advances in Multimedia"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-212"
+  },
+  {
+    "id": "conference-object-26",
+    "sourceNumber": 6,
+    "title": "SNS 여행 정보 분석을 통한 테마별 여행지 분류 기법",
+    "authors": "김용성, 유제혁, 문지훈, 황인준",
+    "venue": "한국정보과학회 KDBC 학술대회",
+    "date": "2015.05",
+    "year": 2015,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-26"
+  },
+  {
+    "id": "conference-object-27",
+    "sourceNumber": 5,
+    "title": "스마트폰을 이용한 모발 밀도 측정 방법",
+    "authors": "김우걸, 김형준, 유제혁, 황인준",
+    "venue": "한국정보처리학회 추계학술발표대회",
+    "date": "2015.01",
+    "year": 2015,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-27"
+  },
+  {
+    "id": "paper-object-216",
+    "sourceNumber": 6,
+    "title": "Development of Mobile Web Application for Skin Status Analysis Service",
+    "authors": "Jehyeok Rew, Kibec Jun, Jangmi Suk, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference",
+    "date": "2014.11.05",
+    "year": 2014,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2014m11a.958",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2014m11a.958",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2014m11a.958"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-216"
+  },
+  {
+    "id": "paper-object-218",
+    "sourceNumber": 5,
+    "title": "Hashtag Analysis Scheme for Topic based Tweet Categorization",
+    "authors": "Yongsung Kim, Sanghoon Jun, Jehyeok Rew, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference:737-740",
+    "date": "2014.11.05",
+    "year": 2014,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2014m11a.737",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2014m11a.737",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2014m11a.737"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-218"
+  },
+  {
+    "id": "paper-object-217",
+    "sourceNumber": 4,
+    "title": "Extracting skin roughness from dermoscopy images for skin age estimation",
+    "authors": "Jehyeok Rew, Jangmi Suk, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference:815-818",
+    "date": "2014.04.22",
+    "year": 2014,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2014m04a.815",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2014m04a.815",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2014m04a.815"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-217"
+  },
+  {
+    "id": "paper-object-215",
+    "sourceNumber": 3,
+    "title": "A Facebook Page Ranking and Highlight Contents Selection Scheme based on User Interests",
+    "authors": "유제혁， 최영환， 황인준",
+    "venue": "정보처리학회논문지. 소프트웨어 및 데이터 공학 · 3(2):101-108",
+    "date": "2014",
+    "year": 2014,
+    "type": "Journal",
+    "url": "",
+    "doiUrl": "",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-215"
+  },
+  {
+    "id": "paper-object-219",
+    "sourceNumber": 2,
+    "title": "Evaluating skin Hereditary traits based on daily activities",
+    "authors": "Jehyeok Rew, Young-Hwan Choi, Daehoon Kim, Seungmin Rho, Eenjun Hwang",
+    "venue": "Frontier and Innovation in Future Computing and Communications:261-270",
+    "date": "2014.01.01",
+    "year": 2014,
+    "type": "Journal",
+    "url": "https://doi.org/10.1007/978-94-017-8798-7_32",
+    "doiUrl": "https://doi.org/10.1007/978-94-017-8798-7_32",
+    "tags": [],
+    "notes": [
+      "(DOI) https://doi.org/10.1007/978-94-017-8798-7_32"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-219"
+  },
+  {
+    "id": "conference-object-29",
+    "sourceNumber": 4,
+    "title": "피부 상태 진단 서비스를 위한 모바일 웹 어플리케이션 개발",
+    "authors": "유제혁, 전기백, 석장미, 황인준",
+    "venue": "한국정보처리학회 추계학술발표대회",
+    "date": "2014.11",
+    "year": 2014,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-29"
+  },
+  {
+    "id": "conference-object-28",
+    "sourceNumber": 3,
+    "title": "토픽 기반의 트윗 분류를 위한 해시태그 분석 기법",
+    "authors": "김용성, 전상훈, 유제혁, 황인준",
+    "venue": "한국정보처리학회 추계학술발표대회",
+    "date": "2014.11",
+    "year": 2014,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-28"
+  },
+  {
+    "id": "paper-object-220",
+    "sourceNumber": 1,
+    "title": "User Group Classification Scheme for Efficient Social Search on the Facebook",
+    "authors": "Jehyeok Rew, Young-Hwan Choi, Eenjun Hwang",
+    "venue": "Proceedings of the Korea Information Processing Society Conference:1431-1434",
+    "date": "2013.11.08",
+    "year": 2013,
+    "type": "Journal",
+    "url": "https://doi.org/10.3745/PKIPS.y2013m11a.1431",
+    "doiUrl": "https://doi.org/10.3745/PKIPS.y2013m11a.1431",
+    "tags": [
+      "KCI"
+    ],
+    "notes": [
+      "(DOI) https://doi.org/10.3745/PKIPS.y2013m11a.1431"
+    ],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/paper/#object-220"
+  },
+  {
+    "id": "conference-object-30",
+    "sourceNumber": 2,
+    "title": "Facebook 에서의 효과적인 소셜 검색을 위한 사용자 그룹 분류 기법",
+    "authors": "유제혁， 최영환， 황인준",
+    "venue": "한국정보처리학회 추계학술발표대회",
+    "date": "2013.11",
+    "year": 2013,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-30"
+  },
+  {
+    "id": "conference-object-31",
+    "sourceNumber": 1,
+    "title": "Geometric Shape Recognition Scheme for Traffic Signs Based on Adaptive Threshold and Hough Transform",
+    "authors": "유제혁， 김대훈， 황인준",
+    "venue": "한국정보과학회 학술발표논문집",
+    "date": "2013.06",
+    "year": 2013,
+    "type": "Conference",
+    "url": "",
+    "doiUrl": "",
+    "tags": [],
+    "notes": [],
+    "sourceUrl": "https://lab.researchwho.com/DSWU-DMKD/conference/#object-31"
+  }
+]

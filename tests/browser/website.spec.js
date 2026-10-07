@@ -205,7 +205,7 @@ test('approved member publishes a photo, program, keywords, social icons and pub
   expect(state.uploads).toBe(1);expect(state.profile.program).toBe('bsms');expect(state.profile.interests).toEqual(['Machine Learning','Graph Mining']);
   await page.getByRole('button',{name:'Close member area'}).click();
   await page.locator('#main-nav').getByRole('link',{name:'Members',exact:true}).click();
-  const card=page.locator('#member-list .member-card');
+  const card=page.locator('#member-list .member-card').filter({hasText:'Test Researcher'});
   await expect(card).toHaveCount(1);await expect(card).toContainText('Test Researcher');
   await expect(card.locator('.social-links a')).toHaveCount(3);
   await expect(card.getByRole('link',{name:'public@example.com'})).toHaveAttribute('href','mailto:public@example.com');
@@ -214,7 +214,7 @@ test('approved member publishes a photo, program, keywords, social icons and pub
   await page.locator('.member-access').click();await page.getByLabel('Publish my profile on the lab website').uncheck();
   await page.getByRole('button',{name:'Save profile',exact:true}).click();
   await expect(page.locator('#toast')).toContainText('saved as a draft');
-  await page.getByRole('button',{name:'Close member area'}).click();await expect(page.locator('#member-list .member-card')).toHaveCount(0);
+  await page.getByRole('button',{name:'Close member area'}).click();await expect(card).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 
@@ -236,8 +236,9 @@ for(const category of [
   await page.locator('#main-nav').getByRole('link',{name:'Members',exact:true}).click();
   await page.reload();
   const group=page.locator(`[data-member-group="${category.value}"]`);
-  await expect(group.locator('.member-card')).toContainText(category.name);
-  await expect(group.locator('.member-details .small-label')).toHaveText(category.label);
+  const card=group.locator('.member-card').filter({hasText:category.name});
+  await expect(card).toContainText(category.name);
+  await expect(card.locator('.member-details .small-label')).toHaveText(category.label);
   await page.getByRole('button',{name:category.filter,exact:true}).click();
   await expect(page.locator('.member-group')).toHaveCount(1);
   await page.getByRole('button',{name:'M.S.',exact:true}).click();
@@ -245,6 +246,62 @@ for(const category of [
   await page.goto(connected+'/apply/');
   await expect(page.locator('.apply-programs h3')).toHaveCount(3);
   await expect(page.locator('.apply-programs')).not.toContainText(category.filter);
+});
+
+test('imported bibliography preserves 85 entries, statuses and links with combined filters',async({page})=>{
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(base+'/publications/');
+  await expect(page.locator('.publication-row')).toHaveCount(85);
+  await expect(page.locator('#paper-object-748')).toContainText('Accepted, Production');
+  await expect(page.locator('#paper-object-721')).toContainText('Submitted');
+  await expect(page.locator('#conference-object-31')).toContainText('Geometric Shape Recognition');
+  await expect(page.locator('#paper-object-722').getByRole('link',{name:/^DOI:/})).toHaveAttribute('href','https://doi.org/10.3390/app16104812');
+  await page.screenshot({path:'test-results/publications-import-desktop.png'});
+  await page.getByRole('button',{name:'Conferences 25',exact:true}).click();
+  await expect(page.locator('.publication-row')).toHaveCount(25);
+  await page.getByRole('combobox',{name:'Filter publications by year'}).selectOption('2025');
+  await expect(page.locator('.publication-row')).toHaveCount(10);
+  await page.getByRole('searchbox',{name:'Search publications'}).fill('KoBERT');
+  await expect(page.locator('.publication-row')).toHaveCount(1);
+  await expect(page.locator('#publication-count')).toContainText('1 of 85');
+  await page.getByRole('searchbox',{name:'Search publications'}).fill('no-such-paper-123');
+  await expect(page.getByRole('heading',{name:'No matching publications'})).toBeVisible();
+  await page.getByRole('searchbox',{name:'Search publications'}).fill('');
+  await page.getByRole('combobox',{name:'Filter publications by year'}).selectOption('all');
+  await page.getByRole('button',{name:'Journals 60',exact:true}).click();
+  await expect(page.locator('.publication-row')).toHaveCount(60);
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  await page.screenshot({path:'test-results/publications-import-mobile.png'});
+});
+
+test('imported professor and four alumni retain their portraits and profile links',async({page})=>{
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(base+'/members/');
+  await expect(page.locator('#member-list .member-card')).toHaveCount(5);
+  const professor=page.locator('[data-member-group="faculty"] .member-card');
+  await expect(professor).toContainText('Jehyeok Rew');
+  await expect(professor).toContainText('Machine Learning');
+  await expect(professor.getByRole('link',{name:'Research profile of Jehyeok Rew'})).toHaveAttribute('href','https://researchwho.com/332/');
+  for(const photo of await page.locator('#member-list .member-photo img').all()){
+    await photo.scrollIntoViewIfNeeded();
+    await expect(photo).toHaveAttribute('src',/^\/images\/members\//);
+    await expect.poll(()=>photo.evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
+  }
+  await professor.scrollIntoViewIfNeeded();
+  await page.screenshot({path:'test-results/faculty-import-desktop.png'});
+  await page.getByRole('button',{name:'Alumni',exact:true}).click();
+  await expect(page.locator('.member-group')).toHaveCount(1);
+  await expect(page.locator('#member-list .member-card h3')).toHaveText(['Kabeen Kim','Minhye Lee','Goeun Lee','Serim Park']);
+  await expect(page.getByRole('img',{name:'Profile placeholder',exact:true})).toHaveCount(1);
+  await page.locator('.member-group').scrollIntoViewIfNeeded();
+  await page.screenshot({path:'test-results/alumni-import-desktop.png'});
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+  await page.screenshot({path:'test-results/alumni-import-mobile.png'});
+  await page.getByRole('button',{name:'Faculty',exact:true}).click();
+  await expect(professor).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
 });
 
 test('mobile member editor publishes and deletes a gallery photo and persists session',async({page})=>{

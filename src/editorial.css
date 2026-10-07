@@ -46,6 +46,51 @@
 .social-links a:hover { background: none; opacity: .72; transform: translateY(-2px); }
 .social-links a:focus-visible { outline: 2px solid #80649e; outline-offset: 2px; border-radius: 4px; }
 
+/* A readable bibliography, with the original titles and publication status. */
+.publication-categories { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.publication-categories button { display: inline-flex; align-items: center; gap: 12px; }
+.publication-categories button span { font-size: 10px; opacity: .7; }
+.publication-toolbar { gap: 20px; }
+.publication-results { margin: 24px 0 6px; color: var(--muted); font-size: 12px; }
+.publication-row { grid-template-columns: 115px minmax(0, 1fr) 72px; gap: 30px; padding: 34px 0; scroll-margin-top: 110px; }
+.publication-date { display: flex; flex-direction: column; gap: 7px; }
+.publication-date > span:last-child { font-size: 10px; color: var(--muted); line-height: 1.7; }
+.publication-year { color: #796396; font-size: 24px; font-weight: 400; }
+.publication-content { min-width: 0; }
+.publication-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 11px; }
+.publication-badges .small-label { font-size: 10px; margin-right: 5px; }
+.publication-badge { display: inline-block; border-radius: 4px; padding: 3px 8px; background: #ede8f7; color: #735b95; font-size: 9px; }
+.publication-badge.status-badge { background: #e4f1ef; color: #427c77; }
+.publication-row h3 { font-size: 21px; line-height: 1.5; font-weight: 700; letter-spacing: -.025em; overflow-wrap: anywhere; word-break: keep-all; }
+.publication-row .publication-authors { font-size: 13px; line-height: 1.8; margin-top: 11px; color: #696978; }
+.publication-row .publication-venue { display: block; font-size: 12px; color: #77708b; margin-top: 6px; }
+.publication-row .publication-notes { font-size: 11px; color: #8b8497; margin-top: 9px; overflow-wrap: anywhere; }
+.paper-links { gap: 12px; align-self: start; padding-top: 5px; }
+.paper-links .text-link { font-size: 11px; white-space: nowrap; }
+.archive-source-note { margin-top: 38px; max-width: 800px; font-size: 11px; line-height: 1.9; color: var(--muted); }
+.archive-source-note a { color: #72588f; text-decoration: underline; text-underline-offset: 3px; }
+.archive-source-note .icon { width: 12px; height: 12px; vertical-align: middle; }
+
+/* Faculty have more space; alumni form a compact portrait directory. */
+.member-affiliation { color: var(--muted); font-size: 12px; line-height: 1.8; margin-top: 12px; }
+.member-profile-link { margin-top: 24px; font-size: 11px; }
+.member-profile-link .icon { width: 14px; height: 14px; }
+[data-member-group="faculty"] .member-grid { grid-template-columns: 1fr; }
+[data-member-group="faculty"] .member-card { display: grid; grid-template-columns: 280px minmax(0, 1fr); align-items: stretch; }
+[data-member-group="faculty"] .member-photo { aspect-ratio: auto; height: 315px; }
+[data-member-group="faculty"] .member-details { padding: 42px 46px; align-self: center; }
+[data-member-group="faculty"] .member-details h3 { font-size: 33px; }
+[data-member-group="faculty"] .member-affiliation { max-width: 430px; font-size: 14px; }
+[data-member-group="faculty"] .interest-tags { margin-top: 20px; }
+[data-member-group="alumni"] .member-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+[data-member-group="alumni"] .member-card { display: flex; flex-direction: column; }
+[data-member-group="alumni"] .member-photo { flex-shrink: 0; }
+[data-member-group="alumni"] .member-details { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+[data-member-group="alumni"] .member-details h3 { font-size: 22px; }
+[data-member-group="alumni"] .member-profile-link { margin-top: auto; padding-top: 24px; }
+[data-member-group="alumni"] .interest-tags:empty { display: none; }
+.placeholder-photo img { object-fit: contain; }
+
 /* The journal follows the lab's history, from its first entry onward. */
 .news-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 20px; margin-bottom: 42px; border-block: 1px solid var(--line); }
 .news-year-links { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -74,6 +119,10 @@
 .news-photo-modal > img { max-height: 75dvh; object-fit: contain; }
 
 @media (max-width: 900px) {
+  .publication-row { grid-template-columns: 90px minmax(0, 1fr) 62px; gap: 22px; }
+  [data-member-group="alumni"] .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  [data-member-group="faculty"] .member-card { grid-template-columns: 230px minmax(0, 1fr); }
+  [data-member-group="faculty"] .member-details { padding: 28px; }
   .hero-grid { min-height: 540px; padding-block: 65px; }
   .hero-copy { max-width: 630px; }
   .news-year-group { grid-template-columns: 1fr; gap: 24px; }
@@ -82,6 +131,29 @@
   .news-image-button img { height: 235px; }
 }
 @media (max-width: 650px) {
+  .publication-categories { gap: 7px; margin-bottom: 22px; }
+  .publication-categories button { padding: 10px 12px; gap: 8px; }
+  .publication-toolbar { align-items: center; gap: 12px; }
+  .publication-toolbar .search-field { min-width: 0; flex: 1; }
+  .publication-toolbar input { font-size: 12px; }
+  .publication-toolbar select { min-height: 44px; max-width: 100px; }
+  .publication-row { grid-template-columns: 1fr; gap: 13px; padding: 27px 0; }
+  .publication-date { flex-direction: row; align-items: baseline; gap: 14px; }
+  .publication-year { font-size: 21px; }
+  .publication-row h3 { font-size: 18px; }
+  .publication-row .publication-authors { font-size: 12px; }
+  .paper-links { flex-direction: row; flex-wrap: wrap; gap: 22px; padding-top: 0; }
+  [data-member-group="faculty"] .member-card { grid-template-columns: 1fr; }
+  [data-member-group="faculty"] .member-photo { height: auto; aspect-ratio: 308 / 325; }
+  [data-member-group="faculty"] .member-details { padding: 28px; }
+  [data-member-group="faculty"] .member-details h3 { font-size: 29px; }
+  [data-member-group="alumni"] .member-grid { grid-template-columns: 1fr; }
+  [data-member-group="alumni"] .member-card { display: grid; grid-template-columns: 110px minmax(0, 1fr); align-items: start; padding: 18px; gap: 20px; }
+  [data-member-group="alumni"] .member-photo { border-radius: 5px; aspect-ratio: 1; }
+  [data-member-group="alumni"] .member-details { padding: 0; }
+  [data-member-group="alumni"] .member-details h3 { font-size: 20px; }
+  [data-member-group="alumni"] .member-profile-link { margin-top: 13px; padding-top: 0; font-size: 10px; }
+  [data-member-group="alumni"] .member-affiliation { font-size: 10px; }
   .page-masthead.has-photo { padding-bottom: 60px; }
   .page-masthead.campus-masthead { padding-bottom: 78px; }
   .campus-masthead .breadcrumbs { margin-bottom: 50px; }

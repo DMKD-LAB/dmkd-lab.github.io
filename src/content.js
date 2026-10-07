@@ -1,4 +1,6 @@
 import newsArchive from './data/news.json' with { type: 'json' };
+import publicationArchive from './data/publications.json' with { type: 'json' };
+import importedPeople from './data/people.json' with { type: 'json' };
 
 // Add verified lab content here. Empty collections intentionally publish no examples.
 export const lab = {
@@ -10,12 +12,12 @@ export const lab = {
   room: 'Room 350, ChaMirisa Memorial Building',
 };
 
-// { id, title, authors, venue, year, type: 'Conference' | 'Journal', url, codeUrl? }
-export const publications = [];
+// Source titles and author spellings are preserved in the bibliography.
+export const publications = publicationArchive;
 // { id, title, date: 'YYYY-MM-DD', category, summary, image, sourceId, sourceImage }
 export const news = newsArchive;
-// Optional faculty: { name, title, interests: [], photoUrl, email, scholarUrl, linkedinUrl, githubUrl }
-export const faculty = [];
+export const faculty = importedPeople.filter(person => person.program === 'faculty');
+export const alumni = importedPeople.filter(person => person.program === 'alumni');
 
 export const studentPrograms = [
   { value: 'ms', label: 'M.S. Students', short: 'M.S.', description: 'Graduate research, deeper questions.' },
