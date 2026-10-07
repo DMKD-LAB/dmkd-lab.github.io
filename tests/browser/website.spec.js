@@ -153,16 +153,17 @@ test('each destination has its own page with direct links, reload, and browser h
   await page.goto(base+'/unknown/');await expect(page.getByRole('heading',{name:'This page is still undiscovered.'})).toBeVisible();
 });
 
-test('Research and Contact load their own banners on desktop and mobile',async({page})=>{
+test('public pages load their own banners on desktop and mobile',async({page})=>{
   for(const width of [1440,390]){
     await page.setViewportSize({width,height:900});
-    for(const [route,image] of [['research','background_2'],['apply','background3']]){
+    for(const [route,image] of [['research','background_2'],['publications','background5'],['news','background5'],['members','background4'],['apply','background3']]){
       await page.goto(`${base}/${route}/`);
       const banner=page.locator('.masthead-photo');
       await expect(banner).toHaveAttribute('src',`/images/hero/${image}.webp`);
       await expect.poll(()=>banner.evaluate(img=>img.complete&&img.naturalWidth>0)).toBeTruthy();
       await expect(page.locator('h1')).toBeVisible();
-      expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
+      const layout=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,overflow:[...document.querySelectorAll('#main *')].filter(el=>el.getBoundingClientRect().right>innerWidth+1).slice(0,5).map(el=>({tag:el.tagName,class:el.className,text:el.textContent.slice(0,100)}))}));
+      expect(layout.scrollWidth,`${route} at ${width}px: ${JSON.stringify(layout.overflow)}`).toBeLessThanOrEqual(layout.width);
       await page.screenshot({path:`test-results/${route}-banner-${width}.png`});
     }
   }

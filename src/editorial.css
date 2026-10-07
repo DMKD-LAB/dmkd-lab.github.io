@@ -39,6 +39,19 @@
 .campus-masthead .masthead-photo { object-position: center 57%; }
 .campus-masthead.has-photo::before { background: linear-gradient(90deg, #141d32ed, #1b2c43b3 47%, #1a314338), linear-gradient(0deg, #10233673, transparent 65%); }
 
+/* New page banners share the palette while keeping their own composition. */
+#main:is([data-page="publications"], [data-page="news"]) .page-masthead::before {
+  background: linear-gradient(90deg, #101b3bcc, #18234152 58%, #1e23451a), linear-gradient(0deg, #13244252, transparent 70%);
+}
+#main[data-page="publications"] .masthead-photo { object-position: center 58%; }
+#main[data-page="news"] .masthead-photo { object-position: center 22%; transform: scale(1.08); }
+#main[data-page="members"] .page-masthead { background: #041329; }
+#main[data-page="members"] .masthead-photo {
+  left: auto; right: 0; width: 58%; object-position: center 42%;
+  mask-image: linear-gradient(90deg, transparent, #000 28%);
+}
+#main[data-page="members"] .page-masthead::before { background: linear-gradient(90deg, #041329, #0413298c 45%, #04132900 78%); }
+
 /* Familiar social marks, without surrounding boxes. */
 .social-links { gap: 8px; }
 .social-links a { width: 44px; height: 44px; border: 0; border-radius: 0; background: none; box-shadow: none; transition: opacity .2s, transform .2s; }
@@ -65,7 +78,7 @@
 .publication-row .publication-authors { font-size: 13px; line-height: 1.8; margin-top: 11px; color: #696978; }
 .publication-row .publication-venue { display: block; font-size: 12px; color: #77708b; margin-top: 6px; }
 .publication-row .publication-notes { font-size: 11px; color: #8b8497; margin-top: 9px; overflow-wrap: anywhere; }
-.paper-links { gap: 12px; align-self: start; padding-top: 5px; }
+.paper-links { flex-direction: column; gap: 12px; align-self: start; padding-top: 5px; }
 .paper-links .text-link { font-size: 11px; white-space: nowrap; }
 .archive-source-note { margin-top: 38px; max-width: 800px; font-size: 11px; line-height: 1.9; color: var(--muted); }
 .archive-source-note a { color: #72588f; text-decoration: underline; text-underline-offset: 3px; }
@@ -145,6 +158,10 @@
   .campus-masthead .breadcrumbs { margin-bottom: 50px; }
   .campus-masthead .masthead-photo { object-position: 62% center; }
   .campus-masthead.has-photo::before { background: linear-gradient(90deg, #162138d6, #162e4373), linear-gradient(0deg, #10233699, transparent 75%); }
+  #main[data-page="publications"] .masthead-photo { object-position: 65% center; }
+  #main[data-page="news"] .masthead-photo { object-position: 35% center; }
+  #main[data-page="members"] .masthead-photo { width: 100%; right: -30%; object-position: center 42%; }
+  #main[data-page="members"] .page-masthead::before { background: linear-gradient(90deg, #041329f2, #04132987 58%, #0413291a); }
   .hero-grid { min-height: 485px; padding-block: 62px 48px; }
   .hero-copy { padding: 0; }
   .hero h1 { font-size: clamp(45px, 12.7vw, 68px); }
