@@ -88,18 +88,19 @@
 .member-affiliation { color: var(--muted); font-size: 12px; line-height: 1.8; margin-top: 12px; }
 .member-profile-link { margin-top: 24px; font-size: 11px; }
 .member-profile-link .icon { width: 14px; height: 14px; }
-#member-list .member-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+#member-list .member-grid { grid-template-columns: repeat(4, minmax(0, 260px)); gap: 20px; }
 #member-list .member-card { display: flex; flex-direction: column; }
 #member-list .member-photo { aspect-ratio: 1; flex-shrink: 0; }
-#member-list .member-details { padding: 24px; min-height: 340px; display: flex; flex-direction: column; flex: 1; }
-#member-list .member-details .small-label { font-size: 10px; }
-#member-list .member-details h3 { font-size: 22px; line-height: 1.4; margin: 8px 0 16px; }
-#member-list .member-affiliation { margin: 0 0 16px; }
+#member-list .member-details { padding: 18px; min-height: 256px; display: flex; flex-direction: column; flex: 1; }
+#member-list .member-details .small-label { font-size: 9px; }
+#member-list .member-details h3 { font-size: 20px; line-height: 1.4; margin: 6px 0 12px; }
+#member-list .member-affiliation { font-size: 11px; margin: 0 0 12px; }
 #member-list .interest-tags { gap: 6px; }
-#member-list .interest-tags span { font-size: 10px; padding: 5px 8px; }
+#member-list .interest-tags span { font-size: 9px; padding: 4px 6px; }
 #member-list .interest-tags:empty { display: none; }
 #member-list .member-email { font-size: 11px; gap: 8px; }
-#member-list .member-profile-link { margin-top: auto; padding-top: 24px; }
+#member-list .social-links { margin-top: 12px; }
+#member-list .member-profile-link { margin-top: auto; padding-top: 16px; }
 .placeholder-photo img { object-fit: contain; }
 
 /* The journal follows the lab's history, from its first entry onward. */
@@ -129,9 +130,12 @@
 .news-photo-modal { max-width: min(1000px, calc(100vw - 32px)); }
 .news-photo-modal > img { max-height: 75dvh; object-fit: contain; }
 
+@media (max-width: 1100px) {
+  #member-list .member-grid { grid-template-columns: repeat(3, minmax(0, 260px)); }
+}
 @media (max-width: 900px) {
   .publication-row { grid-template-columns: 90px minmax(0, 1fr) 62px; gap: 22px; }
-  #member-list .member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #member-list .member-grid { grid-template-columns: repeat(2, minmax(0, 260px)); }
   .hero-grid { min-height: 540px; padding-block: 65px; }
   .hero-copy { max-width: 630px; }
   .news-year-group { grid-template-columns: 1fr; gap: 24px; }
@@ -152,7 +156,11 @@
   .publication-row h3 { font-size: 18px; }
   .publication-row .publication-authors { font-size: 12px; }
   .paper-links { flex-direction: row; flex-wrap: wrap; gap: 22px; padding-top: 0; }
-  #member-list .member-grid { grid-template-columns: 1fr; gap: 20px; }
+  #member-list .member-grid { grid-template-columns: 1fr; gap: 14px; }
+  #member-list .member-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); align-items: start; gap: 16px; padding: 16px; min-height: 270px; }
+  #member-list .member-photo { border-radius: 6px; }
+  #member-list .member-details { padding: 0; min-height: 0; height: 100%; }
+  #member-list .member-details h3 { font-size: 18px; }
   .page-masthead.has-photo { padding-bottom: 60px; }
   .page-masthead.campus-masthead { padding-bottom: 78px; }
   .campus-masthead .breadcrumbs { margin-bottom: 50px; }

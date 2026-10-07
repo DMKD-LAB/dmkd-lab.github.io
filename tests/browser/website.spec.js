@@ -324,6 +324,8 @@ test('faculty, students and alumni share card and portrait sizes at every breakp
       for(const key of ['width','height','photoWidth','photoHeight'])expect(Math.abs(size[key]-sizes[0][key]),`${width}px: equal ${key}`).toBeLessThan(1);
       expect(Math.abs(size.photoWidth-size.photoHeight)).toBeLessThan(1);
       expect(size.clipped).toBe(false);
+      expect(size.height,`${width}px: compact card height`).toBeLessThanOrEqual(width<=650?300:540);
+      if(width>650)expect(size.width).toBeLessThanOrEqual(260);
     }
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();
     if(width===1440||width===390){
