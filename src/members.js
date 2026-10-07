@@ -3,6 +3,7 @@ import { escapeHtml as e, normalizeKeywords, validateSocialUrl, validateImage } 
 import { programs, suggestedKeywords } from './content.js';
 import { icon } from './icons.js';
 
+const MIN_PASSWORD_LENGTH = 8;
 let hooks, user = null, account = null, keywords = [], selectedPhoto = null, photoPreview = '', accountVersion = 0;
 const dialog = document.querySelector('#member-dialog');
 const incoming = new URLSearchParams(location.hash.slice(1));
@@ -39,7 +40,7 @@ function renderAuth(mode) {
   shell(reset?'Let’s get you back in.':signup?'Join the member space.':'Welcome back.',reset?'We’ll email you a link to reset your password.':signup?'Create an account. Lab approval is required before you can publish.':'Sign in to keep your profile and lab moments up to date.',`
     <form id="auth-form" class="stack-form">
       <label>Email<input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"/></label>
-      ${!reset?`<label>Password<input name="password" type="password" autocomplete="${signup?'new-password':'current-password'}" ${signup?'minlength="12"':''} required placeholder="${signup?'At least 12 characters':'Your password'}"/></label>`:''}
+      ${!reset?`<label>Password<input name="password" type="password" autocomplete="${signup?'new-password':'current-password'}" ${signup?`minlength="${MIN_PASSWORD_LENGTH}"`:''} required placeholder="${signup?`At least ${MIN_PASSWORD_LENGTH} characters`:'Your password'}"/></label>`:''}
       ${signup?'<p class="field-hint">Account email is private. You can choose a separate email to display publicly.</p>':''}
       ${feedback()}<button type="submit" class="button dark full">${reset?'Send reset link':signup?'Create account':'Sign in'} ${icon('arrow')}</button>
     </form>
@@ -57,7 +58,7 @@ function renderAuth(mode) {
 }
 
 function renderPassword() {
-  shell('Set your password.', 'Choose a password of at least 12 characters.', `<form class="stack-form"><label>New password<input name="password" type="password" minlength="12" autocomplete="new-password" required/></label><label>Confirm password<input name="confirmation" type="password" minlength="12" autocomplete="new-password" required/></label>${feedback()}<button type="submit" class="button dark full">Save password ${icon('check')}</button></form>`);
+  shell('Set your password.', `Choose a password of at least ${MIN_PASSWORD_LENGTH} characters.`, `<form class="stack-form"><label>New password<input name="password" type="password" minlength="${MIN_PASSWORD_LENGTH}" autocomplete="new-password" required/></label><label>Confirm password<input name="confirmation" type="password" minlength="${MIN_PASSWORD_LENGTH}" autocomplete="new-password" required/></label>${feedback()}<button type="submit" class="button dark full">Save password ${icon('check')}</button></form>`);
   dialog.querySelector('form').onsubmit=(event)=>{event.preventDefault();const form=event.currentTarget;submitting(form,async()=>{
     const fields=new FormData(form);if(fields.get('password')!==fields.get('confirmation'))throw new Error('Passwords do not match.');
     const {error}=await supabase.auth.updateUser({password:fields.get('password')});if(error)throw error;passwordRecovery=false;history.replaceState({},'',location.pathname);hooks.toast('Your password has been updated.');await renderAccount();

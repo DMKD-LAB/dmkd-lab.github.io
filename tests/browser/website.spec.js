@@ -323,9 +323,19 @@ test('pending membership cannot reach the editor',async({page})=>{
 });
 
 test('signup, password reset, and password change provide real success or validation states',async({page})=>{
-  const state=await mockBackend(page);await page.goto(connected);await page.locator('.member-access').click();await page.getByRole('button',{name:'Create an account',exact:true}).click();await page.getByLabel('Email',{exact:true}).fill('tester@example.com');await page.getByLabel('Password',{exact:true}).fill('test-password-123');await page.getByRole('button',{name:'Create account',exact:true}).click();await expect(page.locator('.form-feedback')).toContainText('Check your email');expect(state.signup).toBe(1);
+  const state=await mockBackend(page);await page.goto(connected);await page.locator('.member-access').click();await page.getByRole('button',{name:'Create an account',exact:true}).click();await page.getByLabel('Email',{exact:true}).fill('tester@example.com');
+  const password=page.getByLabel('Password',{exact:true});
+  await expect(password).toHaveAttribute('placeholder','At least 8 characters');
+  await page.locator('#member-dialog').screenshot({path:'test-results/password-eight-characters.png'});
+  await password.fill('Abc123!');await page.getByRole('button',{name:'Create account',exact:true}).click();
+  expect(await password.evaluate(input=>input.validity.tooShort)).toBeTruthy();expect(state.signup).toBe(0);
+  await password.fill('Abc1234!');await page.getByRole('button',{name:'Create account',exact:true}).click();await expect(page.locator('.form-feedback')).toContainText('Check your email');expect(state.signup).toBe(1);
   await page.getByRole('button',{name:'Back to sign in'}).click();await page.getByRole('button',{name:'Forgot password?'}).click();await page.getByLabel('Email',{exact:true}).fill('tester@example.com');await page.getByRole('button',{name:'Send reset link'}).click();await expect(page.locator('.form-feedback')).toContainText('reset link is on its way');expect(state.recovery).toBe(1);
-  await page.getByRole('button',{name:'Close member area'}).click();await login(page);await page.getByRole('button',{name:'Change password'}).click();await page.getByLabel('New password',{exact:true}).fill('new-password-123');await page.getByLabel('Confirm password',{exact:true}).fill('different-password');await page.getByRole('button',{name:'Save password'}).click();await expect(page.locator('.form-feedback')).toContainText('Passwords do not match');await page.getByLabel('Confirm password',{exact:true}).fill('new-password-123');await page.getByRole('button',{name:'Save password'}).click();await expect(page.getByLabel('Full name')).toBeVisible();expect(state.passwordUpdates).toBe(1);
+  await page.getByRole('button',{name:'Close member area'}).click();await login(page);await page.getByRole('button',{name:'Change password'}).click();
+  const newPassword=page.getByLabel('New password',{exact:true});
+  await newPassword.fill('Abc123!');await page.getByLabel('Confirm password',{exact:true}).fill('Abc123!');await page.getByRole('button',{name:'Save password'}).click();
+  expect(await newPassword.evaluate(input=>input.validity.tooShort)).toBeTruthy();expect(state.passwordUpdates).toBe(0);
+  await newPassword.fill('Abc1234!');await page.getByLabel('Confirm password',{exact:true}).fill('Abc1235!');await page.getByRole('button',{name:'Save password'}).click();await expect(page.locator('.form-feedback')).toContainText('Passwords do not match');await page.getByLabel('Confirm password',{exact:true}).fill('Abc1234!');await page.getByRole('button',{name:'Save password'}).click();await expect(page.getByLabel('Full name')).toBeVisible();expect(state.passwordUpdates).toBe(1);
 });
 
 test('failed profile save keeps the form and cleans up its new image',async({page})=>{
@@ -386,8 +396,8 @@ for (const type of ['recovery','invite']) {
     const state=await mockBackend(page);
     await page.goto(`${connected}/#access_token=${token()}&refresh_token=test-refresh&expires_in=3600&token_type=bearer&type=${type}`);
     await expect(page.getByRole('heading',{name:'Set your password.'})).toBeVisible();
-    await page.getByLabel('New password',{exact:true}).fill('new-password-123');
-    await page.getByLabel('Confirm password',{exact:true}).fill('new-password-123');
+    await page.getByLabel('New password',{exact:true}).fill('Abc1234!');
+    await page.getByLabel('Confirm password',{exact:true}).fill('Abc1234!');
     await page.getByRole('button',{name:'Save password'}).click();
     await expect(page.getByLabel('Full name')).toBeVisible();
     expect(state.passwordUpdates).toBe(1);expect(new URL(page.url()).hash).toBe('');
